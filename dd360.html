@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disruptive Delay 360</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .widget {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px;
+            background-color: #f9f9f9;
+            position: relative;
+            max-width: 300px;
+        }
+        .procrastina-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+          font-size: small;
+        }
+        .profile-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-image: url('images/profile.png');
+            background-size: cover;
+            background-position: center;
+            display: inline-block;
+            margin-left: 15px;
+        }
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background-color: #343a40;
+            color: white;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .sidebar img {
+            width: 100px;
+            margin-bottom: 10px;
+          background-color:white;
+        }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+        .sidebar i {
+            margin-right: 10px;
+        }
+        .content {
+            margin-left: 240px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="images/logo.webp" alt="DD360 Logo">
+        <h4>DD360</h4>
+        <a href="#"><i class="bi bi-hourglass-split"></i> Decisioni Rimandate</a>
+        <a href="#"><i class="bi bi-pie-chart"></i> Report Confusi</a>
+        <a href="#"><i class="bi bi-gear-wide"></i> Impostazioni Nefaste</a>
+        <a href="#"><i class="bi bi-calendar-x"></i> Meeting Inutili</a>
+        <a href="#"><i class="bi bi-patch-question"></i> FAQ Senza Risposte</a>
+        <a href="#"><i class="bi bi-clock-history"></i> Task Rimandati</a>
+        <a href="#"><i class="bi bi-people"></i> Gerarchia Caotica</a>
+        <a href="#"><i class="bi bi-bar-chart-line"></i> KPI Senza Senso</a>
+    </div>
+    
+    <div class="content">
+        <header class="bg-dark text-white text-center py-3 d-flex justify-content-between align-items-center px-4">
+            <div>
+                <h1>Disruptive Delay 360</h1>
+                <p>Perché il futuro può sempre aspettare</p>
+            </div>
+            <div class="profile-icon" id="userProfile"></div>
+        </header>
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">DD360</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Report</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Strategie</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Impostazioni</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Procrastinator™</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <main class="container mt-4">
+            <div class="row">
+                <div class="col-md-6 widget">
+                    <button class="btn btn-danger procrastina-btn">Procrastina</button>
+                    <h5>Tempo medio di negoziazione</h5>
+                    <canvas id="negoziazioneChart"></canvas>
+                </div>
+                <div class="col-md-6 widget">
+                    
+                    <h5>Distribuzione del budget</h5>
+                    <canvas id="budgetChart"></canvas>
+                  <button class="btn btn-danger procrastina-btn">Procrastina</button>
+                </div>
+                <div class="col-md-6 widget">
+                    <button class="btn btn-danger procrastina-btn">Procrastina</button>
+                    <h5>Efficienza delle riunioni</h5>
+                    <canvas id="riunioniChart"></canvas>
+                </div>
+                <div class="col-md-6 widget">
+                    <button class="btn btn-danger procrastina-btn">Procrastina</button>
+                    <h5>Tempo medio di risposta alle email</h5>
+                    <canvas id="emailChart"></canvas>
+                </div>
+                <div class="col-md-6 widget">
+                    <button class="btn btn-danger procrastina-btn">Procrastina</button>
+                    <h5>Progetti in corso vs. completati</h5>
+                    <canvas id="progettiChart"></canvas>
+                </div>
+                <div class="col-md-6 widget">
+                    <button class="btn btn-danger procrastina-btn">Procrastina</button>
+                    <h5>Numero di task riassegnati</h5>
+                    <canvas id="taskChart"></canvas>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="bg-dark text-white text-center py-3 mt-4">
+            <p>&copy; 2025 Disruptive Delay 360 - <strong>L'Azienda Brutta</strong> Tutti i diritti rimandati a data da destinarsi</p>
+        </footer>
+    </div>
+    
+    <script>
+        const chartData = [
+            {id: 'negoziazioneChart', type: 'bar', labels: ['Standard', 'DD360'], data: [6, 24]},
+            {id: 'budgetChart', type: 'pie', labels: ['Analisi', 'Valutazione', 'Implementazione'], data: [50, 50, 0]},
+            {id: 'riunioniChart', type: 'line', labels: ['Lun', 'Mar', 'Mer', 'Gio', 'Ven'], data: [10, 12, 15, 20, 30]},
+            {id: 'emailChart', type: 'bar', labels: ['Mattina', 'Pomeriggio', 'Sera'], data: [30, 45, 90]},
+            {id: 'progettiChart', type: 'doughnut', labels: ['In corso', 'Completati'], data: [80, 20]},
+            {id: 'taskChart', type: 'bar', labels: ['Task iniziali', 'Task riassegnati'], data: [50, 45]}
+        ];
+        
+        chartData.forEach(chart => {
+            new Chart(document.getElementById(chart.id).getContext('2d'), {
+                type: chart.type,
+                data: {
+                    labels: chart.labels,
+                    datasets: [{
+                        data: chart.data,
+                        backgroundColor: ['#FFDD57', '#57A0FF', '#FF5733']
+                    }]
+                }
+            });
+        });
+    </script>
+</body>
+</html>
