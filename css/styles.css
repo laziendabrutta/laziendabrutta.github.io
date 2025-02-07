@@ -110,3 +110,22 @@ form {
 .nav .nav-link:hover {
   color: #00aaff;
 }
+
+/* Article header section: posiziona l'immagine e il testo affiancati */
+.header-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.header-section .header-image {
+  width: 150px;            /* Imposta la larghezza desiderata per l'immagine */
+  border-radius: 8px;        /* Bordi arrotondati */
+  flex-shrink: 0;
+}
+
+.header-section .header-text {
+  font-size: 1.3rem;         /* Testo con carattere più grande */
+  color: #ffffff;
+}
