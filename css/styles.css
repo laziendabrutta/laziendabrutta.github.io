@@ -40,3 +40,7 @@ footer {
 .container {
   max-width: 960px;
 } 
+
+img.img-fluid{
+  max-width: 750px;
+}
