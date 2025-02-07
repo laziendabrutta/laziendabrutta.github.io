@@ -1,0 +1,42 @@
+/* Font e colori "corporate" (minimalista e volutamente confusionario) */
+body {
+  font-family: "Times New Roman", "Arial Narrow", serif;
+  background-color: #eeeeee;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titoli con colore istituzionale (blu spento) */
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+/* Link e pulsanti con un tocco "arancione sbagliato" */
+a {
+  color: #f39c12;
+  text-decoration: none;
+}
+
+/* Stili personalizzati per i pulsanti */
+.btn {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+.btn:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+}
+
+/* Header e Footer */
+header {
+  border-bottom: 1px solid #ccc;
+}
+footer {
+  font-size: 0.9rem;
+}
+
+/* Spaziature e layout */
+.container {
+  max-width: 960px;
+} 

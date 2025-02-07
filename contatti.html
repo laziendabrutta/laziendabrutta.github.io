@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L'Azienda Brutta - Contatti</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <main class="container my-4">
+    <section id="contacts" class="my-5">
+      <h1>Parlaci. Se proprio devi.</h1>
+      <address>
+        Un ufficio da qualche parte. Forse.<br>
+        Telefono: Chiamaci, ma potremmo essere in riunione (inutile).<br>
+        Email: <a href="mailto:ceo@laziendabrutta.it">ceo@laziendabrutta.it</a>
+      </address>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="motivation">Motivazione della richiesta:</label>
+          <select class="form-control" id="motivation" required>
+            <option value="">Seleziona</option>
+            <option value="noia">Noia</option>
+            <option value="errore">Errore</option>
+            <option value="costrizione">Costrizione da parte del capo</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Invia</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html> 

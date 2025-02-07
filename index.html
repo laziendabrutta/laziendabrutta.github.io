@@ -1,13 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L'Azienda Brutta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>L'Azienda Brutta - Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 </head>
-<body style="background-color: white; margin: 0;">
-    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-        <img src="images/logo.webp" alt="Logo">
-    </div>
+<body>
+    <!-- Carichiamo il partial dell'header -->
+    <div id="header"></div>
+
+    <main class="container my-4">
+         <section id="hero" class="text-center my-5">
+           <h1>L'Innovazione che nessuno aspettava. Nemmeno noi.</h1>
+           <p class="lead">Soluzioni aziendali avanzate per evitare di prendere decisioni concrete.</p>
+           <!-- Immagine esemplificativa (sostituire con immagine reale se disponibile) -->
+           <img src="images/hero.jpg" alt="Manager in giacca e cravatta che indica uno schermo" class="img-fluid my-3" />
+           <a href="servizi.html" class="btn btn-primary">
+             Scopri i nostri servizi (ma non aspettarti troppo)
+           </a>
+         </section>
+         <section id="why-lab" class="my-5">
+            <h2>Perché LAB</h2>
+            <ul>
+              <li>100% Incompetenza Certificata</li>
+              <li>Leader nell'evitare responsabilità</li>
+              <li>Supportiamo le aziende nel loro declino strutturato</li>
+            </ul>
+         </section>
+         <section id="testimonials-brief" class="my-5">
+             <h2>Testimonianze</h2>
+             <div class="card">
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                     <p>"Dopo tre mesi con LAB, ho capito che il cambiamento è solo un'illusione."</p>
+                     <footer class="blockquote-footer">Mario T.</footer>
+                  </blockquote>
+                </div>
+             </div>
+         </section>
+    </main>
+
+    <!-- Carichiamo il partial del footer -->
+    <div id="footer"></div>
+
+    <!-- jQuery (facoltativo, se necessario per bootstrap o per altri script) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Script per caricare i partial -->
+    <script src="js/main.js"></script>
 </body>
 </html>
