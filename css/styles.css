@@ -1,15 +1,15 @@
 /* Font e colori "corporate" (minimalista e volutamente confusionario) */
 body {
   font-family: "Times New Roman", "Arial Narrow", serif;
-  background-color: #eeeeee;
-  color: #333;
+  background-color: #212529;
+  color: #f8f9fa;
   margin: 0;
   padding: 0;
 }
 
 /* Titoli con colore istituzionale (blu spento) */
 h1, h2, h3 {
-  color: #2c3e50;
+  color: #e3e3e3;
 }
 
 /* Link e pulsanti con un tocco "arancione sbagliato" */
