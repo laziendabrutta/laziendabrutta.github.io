@@ -1,0 +1,146 @@
+body {
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Navbar styling */
+.navbar {
+    background: rgba(41, 50, 65, 0.95);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #4FB3FF !important;
+}
+
+/* Logo styling */
+.navbar-logo {
+    height: 40px;
+    width: auto;
+}
+
+/* Hero section */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2C3E50, #3498DB);
+    padding: 120px 0 80px;
+    color: white;
+}
+
+/* Hero images */
+.hero-logo {
+    height: 350px;
+    width: auto;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.hero-img {
+    max-width: 350px;
+    height: 350px;
+    object-fit: contain;
+    margin-bottom: 0px !important;
+    
+}
+
+/* Section styling */
+.section {
+    padding: 100px 0;
+}
+
+.section h2 {
+    color: #2C3E50;
+    margin-bottom: 1rem;
+}
+
+.bg-light {
+    background: #F8FAFC;
+}
+
+/* Images */
+.section-img, .hero-img {
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.section-img:hover, .hero-img:hover {
+    transform: translateY(-5px);
+}
+
+/* Layout */
+.section .container, .hero .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+}
+
+.image-container {
+    flex: 0 0 350px;
+}
+
+.text-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Social icons */
+.social-icon {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #4FB3FF;
+}
+
+/* Footer */
+.footer {
+    background: #2C3E50;
+    color: white;
+    padding: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section .container,
+    .hero .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .image-container,
+    .text-container {
+        flex: 0 0 100%;
+    }
+    
+    .navbar-logo {
+        height: 30px;
+    }
+    
+    .hero-logo {
+        height: 200px;
+    }
+    
+    .hero-img {
+        height: 200px;
+    }
+}

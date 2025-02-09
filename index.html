@@ -2,43 +2,215 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>L'Azienda Brutta - Home</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.png">
-    <!-- Bootstrap Darkly Theme (Bootstrap 5.3) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/darkly/bootstrap.min.css">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>L'Azienda Brutta - Innovativi nel sembrare innovativi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="css/styles2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
-    <!-- Carichiamo il partial dell'header -->
-    <div id="header"></div>
 
-    <main class="container my-4">
-        <article>
-          <h1>Home</h1>
-          <div class="header-section">
-            <img src="images/home.webp" alt="Home" class="header-image" />
-            <div class="header-text">
-              Benvenuti su L'Azienda Brutta, il punto di riferimento per chi desidera un'azienda che sembri innovativa senza fare assolutamente nulla di concreto. Siamo il partner ideale per aziende che vogliono eccellere nel non prendere decisioni, gestire le risorse umane con il massimo del disagio e procrastinare ogni passo strategico.
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="images/logo.webp" alt="Logo L'Azienda Brutta" class="navbar-logo me-2">
+                L'Azienda Brutta
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Chi Siamo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servizi">Servizi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#strategie">Strategie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonianze">Testimonianze</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#lavora">Lavora con Noi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link social-icon" href="https://www.linkedin.com/company/laziendabrutta/" target="_blank">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
-          </div>
-          <p>
-            Qui troverete soluzioni che nessun'altra azienda ha il coraggio di offrire, come la gestione finanziaria attraverso il debito creativo e la valorizzazione della totale assenza di leadership come un punto di forza.
-          </p>
-          <p>
-            L'Azienda Brutta vi offre il meglio del peggio, garantendo un supporto inesistente e la massima inefficienza operativa. Perché in un mondo che corre troppo, noi restiamo fermi con stile.
-          </p>
-        </article>
-    </main>
+        </div>
+    </nav>
 
-    <!-- Carichiamo il partial del footer -->
-    <div id="footer"></div>
+    <!-- Home -->
+    <header id="home" class="hero d-flex align-items-center">
+        <div class="container text-white">
+            <div class="image-container d-flex align-items-center justify-content-center gap-4">
+                <img src="images/logo.webp" alt="Logo L'Azienda Brutta" class="hero-logo">
+                <img src="images/home.webp" alt="Manager con grafico vuoto" class="hero-img">
+            </div>
+            <div class="text-container">
+                <h1 data-aos="fade-up">Il Meglio del Peggio</h1>
+                <p data-aos="fade-up" data-aos-delay="200"><strong>Innovazione che non serve, soluzioni che non funzionano, ma con stile.</strong></p>
+                <div class="content mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <p>Benvenuti su L'Azienda Brutta, il punto di riferimento per chi desidera un'azienda che sembri innovativa senza fare assolutamente nulla di concreto. Siamo il partner ideale per aziende che vogliono eccellere nel non prendere decisioni, gestire le risorse umane con il massimo del disagio e procrastinare ogni passo strategico.</p>
+                    <p>Qui troverete soluzioni che nessun'altra azienda ha il coraggio di offrire, come la gestione finanziaria attraverso il debito creativo e la valorizzazione della totale assenza di leadership come un punto di forza.</p>
+                    <p>L'Azienda Brutta vi offre il meglio del peggio, garantendo un supporto inesistente e la massima inefficienza operativa. Perché in un mondo che corre troppo, noi restiamo fermi con stile.</p>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <!-- jQuery (facoltativo, se necessario per bootstrap o per altri script) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Script per caricare i partial -->
-    <script src="js/main.js"></script>
+    <!-- Chi Siamo -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="image-container">
+                <img src="images/chisiamo.webp" alt="Team che si stringe la mano senza documenti" class="section-img">
+            </div>
+            <div class="text-container">
+                <h2 data-aos="fade-up">Chi Siamo</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Nati per fallire con eleganza.</p>
+                <div class="content mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <p>L'Azienda Brutta nasce dalla visione del suo fondatore, il leggendario Gianni Brutto, che ha capito che il mondo aziendale aveva bisogno di un nuovo paradigma: un'azienda che rappresentasse il fallimento con eleganza.</p>
+                    <p>Da anni offriamo ai nostri clienti un approccio rivoluzionario alla gestione d'impresa, basato sull'evitare responsabilità, confondere i dipendenti e promuovere la cultura della riunione infinita senza obiettivi concreti.</p>
+                    <p>Il nostro team di esperti, o meglio, di professionisti improvvisati, lavora con passione per garantire che nessuna iniziativa arrivi mai a compimento, adottando strategie innovative come il caos organizzato e la paralisi decisionale strutturata. Perché lavorare, quando si può semplicemente sembrare impegnati?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi -->
+    <section id="servizi" class="section bg-light">
+        <div class="container">
+            <div class="image-container">
+                <img src="images/servizi.webp" alt="Diagramma di flusso caotico" class="section-img">
+            </div>
+            <div class="text-container">
+                <h2 data-aos="fade-up">I Nostri Servizi</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Offriamo soluzioni per rallentare la tua azienda.</p>
+                <div class="content mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <p>L'Azienda Brutta offre una gamma di servizi progettati per garantire il massimo livello di inefficienza e stagnazione aziendale:</p>
+                    <ul>
+                        <li><strong>HR TraumaOriented™</strong> - Un modello innovativo che elimina ogni forma di supporto emotivo e logistico.</li>
+                        <li><strong>Smart Insolvency™</strong> - Trasforma il ritardo nei pagamenti in un valore aziendale.</li>
+                        <li><strong>Disruptive Delay 360™</strong> - La piattaforma che vi aiuterà a rinviare sistematicamente ogni scelta strategica.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategie -->
+    <section id="strategie" class="section">
+        <div class="container">
+            <div class="image-container">
+                <img src="images/strategie.webp" alt="Pile di documenti senza contenuto" class="section-img">
+            </div>
+            <div class="text-container">
+                <h2 data-aos="fade-up">Strategie e Documenti</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Documenti strategici che nessuno leggerà mai.</p>
+                <div class="content mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <p>Nel nostro archivio di documenti strategici troverete tutto ciò che serve per rendere la vostra azienda un capolavoro di disorganizzazione e inefficienza.</p>
+                    <ul class="strategy-list">
+                        <li><a href="https://www.linkedin.com/posts/laziendabrutta_entra-nel-futuro-delle-risorse-umane-con-activity-7293542766683316225-XLaJ" target="_blank">HR TraumaOriented™: guida pratica su come massimizzare il turnover</a></li>
+                        <li><a href="https://www.linkedin.com/posts/laziendabrutta_decalogo-per-affrontare-il-burnout-con-positivit%C3%A0-activity-7292586960253050881-wYLI" target="_blank">10 Regole per il Burnout Produttivo™</a></li>
+                        <li><a href="https://www.linkedin.com/posts/laziendabrutta_innovazionestrategica-rinviareconclasse-proattivitaeqfittizia-activity-7292833094913478658-xR5M?utm_source=share&utm_medium=member_desktop" target="_blank">L'arte del rinvio strategico: 'Circling Back' come filosofia di vita</a></li>
+                        <li><a href="https://www.linkedin.com/posts/laziendabrutta_lowhangingfruit-corporatelife-quickwins-activity-7293191769653968898-xvnN" target="_blank">Low-Hanging Fruit: la dieta preferita dell'azienda moderna</a></li>
+                        <li><a href="#" target="_blank">FastidioStrategy™: il marketing che non ti molla mai</a></li>
+                        <li><a href="#" target="_blank">Il Metodo Ammiocuggino™ per la Cybersecurity</a></li>
+                        <li><a href="#" target="_blank">Risultati finanziari Q4 2024: un'azienda che non sa contare</a></li>
+                        <li><a href="#" target="_blank">Smart Insolvency™: guida alla gestione del debito</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonianze -->
+    <section id="testimonianze" class="section bg-light">
+        <div class="container">
+            <div class="image-container">
+                <img src="images/testimonianze.webp" alt="Cliente perplesso davanti al consulente" class="section-img">
+            </div>
+            <div class="text-container">
+                <h2 data-aos="fade-up">Testimonianze</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Le aziende ci adorano... più o meno.</p>
+                <div class="content mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonials">
+                        <blockquote>"Dopo tre mesi con LAB, ho capito che il cambiamento è solo un'illusione." <footer>- Mario T.</footer></blockquote>
+                        <blockquote>"Abbiamo adottato la strategia Smart Insolvency™. Ora il commercialista ci odia." <footer>- Luisa R.</footer></blockquote>
+                        <blockquote>"L'unica certezza con LAB è che tutto rimarrà incerto." <footer>- Claudio B.</footer></blockquote>
+                        <blockquote>"Grazie a LAB, abbiamo ottimizzato la nostra inefficienza!" <footer>- Startup Dinamica S.r.l.</footer></blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lavora con Noi -->
+    <section id="lavora" class="section">
+        <div class="container">
+            <div class="image-container">
+                <img src="images/lavoraconnoi.webp" alt="Ufficio con scrivanie vuote" class="section-img">
+            </div>
+            <div class="text-container">
+                <h2 data-aos="fade-up">Lavora con Noi</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Cerchiamo persone che parlano di innovazione senza innovare.</p>
+                <div class="content mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <p>Siamo sempre alla ricerca di nuovi talenti disposti a unirsi a noi per contribuire al nostro obiettivo di non fare nulla in modo strategico.</p>
+                    <h4>Posizioni Aperte:</h4>
+                    <ul class="job-list">
+                        <li>Chief Chaos Officer</li>
+                        <li>Manager dell'Inazione Strategica</li>
+                        <li>Responsabile KPI senza KPI</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti" class="section bg-light">
+        <div class="container">
+            <div class="image-container">
+                <img src="images/contatti.webp" alt="Telefono che squilla senza risposta" class="section-img">
+            </div>
+            <div class="text-container">
+                <h2 data-aos="fade-up">Contatti</h2>
+                <p data-aos="fade-up" data-aos-delay="200">Scrivici... se proprio devi.</p>
+                <div class="content mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-info">
+                        <p><strong>Indirizzo:</strong> Un ufficio da qualche parte. Forse.</p>
+                        <p><strong>Telefono:</strong> Chiamaci, ma potremmo essere in riunione (inutile).</p>
+                        <p><strong>Email:</strong> <a href="mailto:ceo@laziendabrutta.it">ceo@laziendabrutta.it</a></p>
+                    </div>
+                    
+                    <form id="contactForm" class="mt-4">
+                        <label for="motivo">Motivo della richiesta:</label>
+                        <select id="motivo" class="form-select">
+                            <option>Noia</option>
+                            <option>Errore</option>
+                            <option>Costrizione da parte del capo</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary mt-3">Invia</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© <span id="year"></span> L'Azienda Brutta - Il Meglio del Peggio</p>
+            <a href="https://www.linkedin.com/company/laziendabrutta/" class="social-icon" target="_blank">
+                <i class="bi bi-linkedin"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/main2.js"></script>
 </body>
 </html>
