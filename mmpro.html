@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MicroManager Pro - Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    .tagline {
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      margin-top: 0;
+    }
+    .button {
+      background-color: #f59e0b;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    .status {
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .notification {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: #1e3a8a;
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      display: none;
+      z-index: 1000;
+    }
+    .icon {
+      width: 20px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">MicroManager Pro</div>
+    <div class="tagline">Controlla tutto. Anche l'incontrollabile.</div>
+  </header>
+  <main>
+    <div class="card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" class="icon"> Live Task Surveillance</h2>
+      <p>Monitoraggio in tempo reale delle attività. Ogni azione viene loggata, analizzata e potenzialmente fraintesa.</p>
+      <div class="status">Ultima attività: <em>Luca ha modificato un campo senza approvazione</em>.</div>
+    </div>
+
+    <div class="card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/1827/1827392.png" class="icon"> Allineamento Forzato</h2>
+      <p>Reminder ogni 10 minuti per ricordare che non stai lavorando abbastanza. Include anche falsi allarmi motivazionali.</p>
+      <button class="button" onclick="showNotification('Reminder inviato: Tutti devono riallinearsi, anche se già allineati.')">Invia Reminder</button>
+    </div>
+
+    <div class="card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" class="icon"> Autovalutazione Guidata</h2>
+      <p>Scegli il tuo stato attuale: <br><strong>😩 Inadeguato</strong> – <strong>😐 Da migliorare</strong> – <strong>😵‍💫 Ansioso ma presente</strong></p>
+      <button class="button" onclick="showNotification('Hai scelto: "Ansioso ma presente". Ottima scelta.')">Compila</button>
+    </div>
+
+    <div class="card">
+      <h2><img src="https://cdn-icons-png.flaticon.com/512/2910/2910765.png" class="icon"> Statistiche del Controllo</h2>
+      <p><strong>Feedback generati:</strong> 52<br>
+         <strong>Microcorrezioni attive:</strong> 14<br>
+         <strong>Decisioni annullate:</strong> 7<br>
+         <strong>Utenti colpevolizzati:</strong> 3</p>
+    </div>
+  </main>
+  <div id="notification" class="notification"></div>
+
+  <script>
+    function showNotification(msg) {
+      const box = document.getElementById("notification");
+      box.textContent = msg;
+      box.style.display = "block";
+      setTimeout(() => box.style.display = "none", 3500);
+    }
+  </script>
+</body>
+</html>
