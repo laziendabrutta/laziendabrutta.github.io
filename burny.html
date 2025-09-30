@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Burny™ – La Mascotte del Burnout | L'Azienda Brutta</title>
+  <meta name="description" content="Scopri Burny™, l'action figure ufficiale di L'Azienda Brutta: la fiammella antropomorfa che alimenta i tuoi KPI (e la tua insonnia). Preordina ora." />
+  <meta property="og:title" content="Burny™ – La Mascotte del Burnout" />
+  <meta property="og:description" content="Action figure ufficiale LAB. Presto nei negozi di giocattoli più brutti." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/burny-boxset.png" />
+  <meta property="og:url" content="https://laziendabrutta.it/burny.html" />
+  <link rel="icon" href="images/favicon.png"/>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --card: #121520;
+      --muted: #9aa3b2;
+      --text: #e8eefc;
+      --accent: #ff6a00; /* Burny orange */
+      --accent-2: #ffd166; /* glow */
+      --success: #34d399;
+      --danger: #ef4444;
+      --shadow: 0 10px 30px rgba(0,0,0,.4);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: radial-gradient(1200px 600px at 20% -10%, rgba(255,106,0,.15), transparent),
+                                          radial-gradient(1000px 500px at 120% 10%, rgba(255,209,102,.07), transparent),
+                                          var(--bg);
+                 color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding: 12px 0 24px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+    .brand img { width:36px; filter: drop-shadow(0 6px 12px rgba(255,106,0,.35)); border-radius: 10px;}
+    .brand .name { font-weight:700; letter-spacing:.4px; }
+    .nav { display:flex; gap:18px; color: var(--muted); }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding: 14px 18px; border-radius: 14px; border: 1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); color:#fff; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .2s ease; cursor:pointer; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 14px 36px rgba(255,106,0,.25); }
+    .btn.accent { background: linear-gradient(180deg, #ff7a1a, #ff6a00); border: none; }
+    .btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,.12); }
+
+    /* Hero */
+    .hero { display:grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items:center; padding: 20px 0 36px; }
+    .kicker { color: var(--accent-2); font-weight: 700; text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; }
+    h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.08; margin: 8px 0 12px; }
+    .lead { color: var(--muted); font-size: 1.05rem; max-width: 56ch; }
+    .tags { display:flex; flex-wrap:wrap; gap:10px; margin: 16px 0 22px; }
+    .tag { padding: 6px 10px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 100px; font-size: .86rem; color: #e9ecf7; }
+    .cta { display:flex; gap:12px; flex-wrap: wrap; }
+
+    .hero-card { position: relative; background: radial-gradient(600px 300px at 30% -30%, rgba(255,209,102,.15), rgba(0,0,0,0)), var(--card);
+                 border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); box-shadow: var(--shadow); overflow:hidden; padding: 18px; }
+    .hero-media { position:relative; aspect-ratio: 4/5; border-radius: 14px; background: linear-gradient(180deg, rgba(255,106,0,.18), rgba(0,0,0,.3)); display:grid; place-items:center; overflow:hidden; border:1px solid rgba(255,255,255,.08); }
+    .hero-media img { width:100%; height:100%; object-fit: cover; filter: saturate(1.1) contrast(1.05); margin: -50px;}
+    .ribbon { position:absolute; top:16px; right:-42px; rotate: 20deg; background: #ff7a1a; color:#070709; padding: 8px 56px; font-weight:900; text-transform:uppercase; letter-spacing:.08em; box-shadow: var(--shadow); }
+
+    /* Feature grid */
+    .features { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
+    .feature { background: var(--card); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding:18px; box-shadow: var(--shadow); }
+    .feature h3 { margin: 8px 0 6px; font-size:1.1rem; }
+    .feature p { margin: 0; color: var(--muted); font-size:.98rem; }
+
+    /* Specs + Box */
+    .split { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 32px; align-items: stretch; }
+    .card { background: var(--card); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding:18px; box-shadow: var(--shadow); }
+    .specs dt { color:#fff; font-weight:600; margin-top: 10px; }
+    .specs dd { margin: 6px 0 10px 0; color: var(--muted); }
+    .box img { width:100%; border-radius: 12px; border:1px solid rgba(255,255,255,.08); }
+
+    /* Promo band */
+    .promo { margin: 32px 0; padding: 18px; border-radius: var(--radius); border:1px dashed rgba(255,255,255,.18); background: linear-gradient(180deg, rgba(255,106,0,.08), rgba(255,209,102,.05)); display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .promo strong { color: var(--accent-2); }
+
+    /* FAQ */
+    .faq { margin-top: 18px; display:grid; grid-template-columns: 1fr 1fr; gap:18px; }
+    .faq .q { background: var(--card); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding:16px; }
+    .faq h4 { margin: 0 0 6px; }
+    .faq p { margin: 0; color: var(--muted); }
+
+    /* Footer */
+    footer { margin: 40px 0 20px; color: var(--muted); font-size:.88rem; }
+    .disclaimer { margin-top: 10px; opacity:.9; }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .features { grid-template-columns: 1fr 1fr; }
+      .split { grid-template-columns: 1fr; }
+      .faq { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="images/logo.webp" style="background-color: white;" alt="L'Azienda Brutta - Ridiamo per non piangere" />
+        <div class="name">L'Azienda Brutta • LAB</div>
+      </div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="#specifiche">Specifiche</a>
+        <a href="#faq">FAQ</a>
+        <a href="#preordina" class="btn ghost">Preordina</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="kicker">Nuovo Prodotto LAB</div>
+        <h1>Burny™ — L'Action Figure del <span style="color:var(--accent)">Burnout</span> Professionale</h1>
+        <p class="lead">La fiammella antropomorfa che trasforma <em>deadline impossibili</em> in <strong>merchandising inevitabile</strong>. Con cravatta in post‑it, occhiaie premium e bicchierone di caffè XXL. 
+        Presto nei <strong>negozi di giocattoli più brutti</strong> e su questa pagina, in <u>quantità irresponsabili</u>.</p>
+        <div class="tags">
+          <span class="tag">Chief Exhaustion Officer</span>
+          <span class="tag">Limited Launch Q4</span>
+          <span class="tag">Compatibile con KPI*</span>
+        </div>
+        <div class="cta" id="preordina">
+          <a class="btn accent" href="#form-preordine">Preordina ora</a>
+          <a class="btn" href="#specifiche">Scopri di più</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-media">
+          <!-- Sostituisci con l'immagine reale del render/packshot -->
+          <img src="images/burny-boxset.png" alt="Burny™ action figure in confezione" />
+        </div>
+        <div class="ribbon">Presto Disponibile</div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>Design Iconico</h3>
+        <p>Fiamma antropomorfa con occhiaie HQ, cravatta in post‑it ingialliti e laptop lievemente fumante. Realismo emotivo incluso.</p>
+      </div>
+      <div class="feature">
+        <h3>Packaging da Scrivania</h3>
+        <p>Blister trasparente con <em>LAB background</em> per look professionale‑tossico. Perfetto accanto ai report mai letti.</p>
+      </div>
+      <div class="feature">
+        <h3>Frasi Motivazionali*</h3>
+        <p>Sticker pack con citazioni ufficiali: “Dai, che è solo un allineamento urgente™”. “Il prossimo sprint sarà più leggero”.</p>
+      </div>
+    </section>
+
+    <section class="split" id="specifiche">
+      <article class="card">
+        <h2>Specifiche Tecniche</h2>
+        <dl class="specs">
+          <dt>Altezza</dt><dd>18 cm di resilienza tossica</dd>
+          <dt>Materiali</dt><dd>ABS + PVC + residui di caffè (non edibile)</dd>
+          <dt>Accessori</dt><dd>Bicchierone, laptop, cuffie, badge “BURNY”, set 12 post‑it cravatta</dd>
+          <dt>Compatibilità</dt><dd>Scrivanie chaos‑ready, open space, call alle 23:59</dd>
+          <dt>Età</dt><dd>18+ (contenuti di stanchezza esplicita)</dd>
+        </dl>
+      </article>
+      <aside class="card box">
+        <h2>In Scatola</h2>
+        <img src="images/burny-box-desk.png" alt="Confezione Burny™ su scrivania d'ufficio" />
+        <p style="color:var(--muted); margin-top:10px;">Confezione premium con sfondo brandizzato LAB per massimizzare la percezione di urgenza.</p>
+      </aside>
+    </section>
+
+    <section class="promo">
+      <div>
+        <strong>Presto nei negozi di giocattoli più brutti</strong> e in esclusiva su laziendabrutta.it. Edizione di lancio limitata.
+      </div>
+      <a class="btn accent" href="#form-preordine">Blocca la tua unità</a>
+    </section>
+
+    <section class="split">
+      <article class="card">
+        <h2>La Mitologia Ufficiale</h2>
+        <p><strong>La leggenda di Burny™ – Il Fuoco Sacro del KPI</strong></p>
+        <p>Burny nasce da una caffettiera dimenticata accesa nella sala riunioni di LAB, durante un workshop di 48 ore consecutive intitolato <em>“Trasformare lo stress in opportunità”</em>. Quando l’ultimo consulente cadde esausto sotto il peso delle slide, dal fumo si materializzò Burny: una fiamma senziente alimentata da ansia, caffè e deadline impossibili.</p>
+        <p>Da allora, Burny è diventato il <strong>Guardiano del Burnout Efficiente™</strong>. Se arrivi in ufficio alle 7:00, lui è già lì con il suo sorriso stanco. Se esci alle 23:59, lui ti accompagna ricordandoti che domani sarà peggio. Si nutre esclusivamente di mail con oggetto “Gentile Reminder” e PowerPoint da 120 slide senza contenuto.</p>
+        <p>I manager lo venerano come simbolo di <em>resilienza tossica</em>: ogni volta che un dipendente rinuncia a un weekend, Burny diventa più luminoso. I dipendenti invece lo vedono come un fratello maggiore: crollato, ma ancora in piedi… perché il crollo definitivo è calendarizzato nel Q4.</p>
+        <p><strong>Slogan interno LAB:</strong> “Dove c’è Burny, c’è sempre un Allineamento Urgente™ in arrivo.”</p>
+      </article>
+      <aside class="card">
+        <h2>Character Sheet</h2>
+        <ul style="margin:0; padding-left: 18px; color: var(--muted); line-height:1.6;">
+          <li><strong>Ruolo:</strong> Chief Exhaustion Officer (CXO)</li>
+          <li><strong>Poteri:</strong> Trasforma pause in meeting; appare quando salta il Wi‑Fi; si nutre di feedback vaghi</li>
+          <li><strong>Debolezze:</strong> Weekend veri, acqua, sindacati</li>
+          <li><strong>Claim:</strong> “Burny non dorme mai, così tu puoi lavorare sempre.”</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="split" id="faq">
+      <article class="card">
+        <h2>FAQ</h2>
+        <div class="faq">
+          <div class="q">
+            <h4>È un giocattolo o un monito esistenziale?</h4>
+            <p>Entrambi. Arreda, giudica e ricorda le tue scelte di vita lavorativa.</p>
+          </div>
+          <div class="q">
+            <h4>Parla o fa rumore?</h4>
+            <p>Non emette suoni. Le frasi motivazionali sono sticker sostituibili (silenzio passivo‑aggressivo incluso).</p>
+          </div>
+          <div class="q">
+            <h4>È adatto all’home office?</h4>
+            <p>Sì, ma tende ad auto‑replicare i meeting sul calendario. Usi con cautela.</p>
+          </div>
+          <div class="q">
+            <h4>Posso regalarlo al mio capo?</h4>
+            <p>Consigliatissimo. Potrebbe non cogliere l’ironia; il che è parte dell’esperienza.</p>
+          </div>
+        </div>
+      </article>
+      <aside class="card" id="form-preordine">
+        <h2>Pre‑ordine</h2>
+        <p class="lead" style="margin:0 0 10px;">Inserisci la mail per essere avvisato al lancio.</p>
+        <form onsubmit="event.preventDefault(); this.querySelector('.done').style.display='block'; this.querySelector('.fields').style.display='none';">
+          <div class="fields">
+            <label for="email" style="display:block; margin-bottom:8px; color: var(--muted);">Email</label>
+            <input id="email" type="email" required placeholder="tua@email.com" style="width:100%; padding:14px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.14); background:#0e121a; color:#fff; outline:none;" />
+            <div style="height:10px"></div>
+            <button class="btn accent" type="submit">Avvisami</button>
+          </div>
+          <div class="done" style="display:none; color: var(--success); font-weight:600;">Grazie! Ti avviseremo quando Burny™ sbarcherà nei negozi di giocattoli più brutti (non è vero).</div>
+        </form>
+        <p class="disclaimer">* Nessun KPI è stato realmente migliorato durante la produzione di questo prodotto.</p>
+      </aside>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> L'Azienda Brutta (LAB) — Tutti i diritti inesistenti riservati.</div>
+      <div class="disclaimer">Questo sito e il prodotto Burny™ sono satirici. Se ti senti identificato, cambia azienda (o prenditi una pausa vera). Se sei un produttore di giocattoli, le nostre royalties sono del 50% sulle revenues.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
