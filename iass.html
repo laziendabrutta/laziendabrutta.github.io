@@ -1,0 +1,1329 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ignorance as a Service™ — LAB</title>
+  <meta name="description" content="Soluzioni enterprise per delegare la comprensione. Ignorance as a Service™ di LAB: meno consapevolezza, più serenità operativa." />
+  <style>
+    :root{
+      --bg:#07090f;
+      --card:#0d1020cc;
+      --card2:#0b0f1bcc;
+      --txt:#e9ecff;
+      --muted:#aeb6da;
+      --muted2:#7d86b3;
+      --brand:#7c5cff;
+      --brand2:#00d4ff;
+      --ok:#37d996;
+      --warn:#ffcc66;
+      --danger:#ff5c7a;
+      --line:#1a2140;
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --shadow2: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1140px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--txt);
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(124,92,255,.28), transparent 60%),
+                  radial-gradient(1000px 600px at 85% 20%, rgba(0,212,255,.18), transparent 55%),
+                  radial-gradient(1200px 700px at 50% 110%, rgba(255,92,122,.10), transparent 60%),
+                  var(--bg);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+
+    /* Subtle animated grain */
+    .grain{
+      pointer-events:none;
+      position:fixed; inset:-40%;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.25'/%3E%3C/svg%3E");
+      mix-blend-mode:overlay;
+      opacity:.25;
+      transform:translate3d(0,0,0);
+      animation: drift 12s linear infinite;
+    }
+    @keyframes drift{
+      0%{transform:translate3d(-4%, -3%, 0)}
+      50%{transform:translate3d(4%, 3%, 0)}
+      100%{transform:translate3d(-4%, -3%, 0)}
+    }
+
+    /* Top nav */
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(7,9,15,.78), rgba(7,9,15,.30));
+      border-bottom:1px solid rgba(26,33,64,.6);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:10px;
+      background: conic-gradient(from 180deg, var(--brand), var(--brand2), var(--brand));
+      box-shadow: 0 10px 26px rgba(124,92,255,.28), 0 8px 24px rgba(0,212,255,.16);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:after{
+      content:"";
+      position:absolute; inset:-30%;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,.32), transparent 45%);
+      transform:rotate(22deg);
+    }
+    .brand span small{
+      display:block; font-weight:600; color:var(--muted2); letter-spacing:.3px;
+      margin-top:2px; font-size:12px;
+    }
+    .links{
+      display:flex; gap:18px; align-items:center; flex-wrap:wrap;
+      color:var(--muted);
+      font-weight:600;
+      font-size:14px;
+    }
+    .links a{
+      opacity:.9;
+      padding:8px 10px;
+      border-radius:10px;
+    }
+    .links a:hover{
+      background:rgba(124,92,255,.10);
+      color:var(--txt);
+    }
+    .actions{display:flex; gap:10px; align-items:center}
+    .btn{
+      border:1px solid rgba(124,92,255,.35);
+      background: rgba(124,92,255,.12);
+      color:var(--txt);
+      padding:10px 14px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      display:inline-flex; align-items:center; gap:10px;
+      user-select:none;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:rgba(124,92,255,.55)}
+    .btn:active{transform:translateY(0px)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,212,255,.75));
+      border-color:transparent;
+      box-shadow: 0 14px 38px rgba(124,92,255,.20), 0 14px 34px rgba(0,212,255,.12);
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.12);
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      color:var(--muted);
+      font-weight:650;
+      font-size:13px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, #fff, transparent 50%), var(--ok);
+      box-shadow:0 0 0 4px rgba(55,217,150,.12);
+    }
+
+    /* Hero */
+    .hero{
+      padding:62px 0 24px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:26px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns:1fr; gap:18px}
+      .links{display:none}
+    }
+    .h-badge{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px}
+    .tag{
+      border:1px solid rgba(0,212,255,.24);
+      background: rgba(0,212,255,.07);
+      color:#c9f4ff;
+      font-weight:750;
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+      letter-spacing:.2px;
+    }
+    .tag.alt{
+      border-color:rgba(124,92,255,.22);
+      background:rgba(124,92,255,.07);
+      color:#e5ddff;
+    }
+    h1{
+      margin:0 0 14px;
+      font-size: clamp(34px, 4vw, 56px);
+      line-height:1.02;
+      letter-spacing:-.8px;
+    }
+    .lead{
+      margin:0 0 22px;
+      color:var(--muted);
+      font-size: 17px;
+      line-height:1.6;
+      max-width: 62ch;
+    }
+
+    .hero-cta{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+      margin: 18px 0 10px;
+    }
+    .meta{
+      display:flex; gap:14px; flex-wrap:wrap;
+      margin-top:14px;
+      color:var(--muted2);
+      font-weight:650;
+      font-size:13px;
+    }
+    .meta span{
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.10);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .meta .ico{
+      width:18px;height:18px; display:inline-grid; place-items:center;
+      background:rgba(124,92,255,.12);
+      border:1px solid rgba(124,92,255,.25);
+      border-radius:7px;
+      font-family:var(--mono);
+      font-weight:900;
+      color:#e9e2ff;
+      font-size:12px;
+    }
+
+    /* Hero card (right) */
+    .hero-card{
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(13,16,32,.82), rgba(9,12,23,.72));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(700px 340px at 30% 0%, rgba(124,92,255,.20), transparent 60%),
+                  radial-gradient(700px 340px at 90% 20%, rgba(0,212,255,.12), transparent 55%);
+      pointer-events:none;
+    }
+    .card-top{
+      padding:18px 18px 0;
+      position:relative;
+    }
+    .card-title{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+    }
+    .card-title strong{font-size:14px; letter-spacing:.2px}
+    .chip{
+      font-family:var(--mono);
+      font-size:12px;
+      color:rgba(233,236,255,.85);
+      border:1px dashed rgba(255,255,255,.18);
+      background:rgba(255,255,255,.04);
+      padding:7px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .card-body{padding:14px 18px 18px; position:relative}
+    .mini{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .mini > div{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding:12px;
+    }
+    .mini h3{
+      margin:0 0 8px;
+      font-size:13px;
+      color:var(--muted);
+      font-weight:800;
+      letter-spacing:.3px;
+      text-transform:uppercase;
+    }
+    .mini p{margin:0; font-size:14px; line-height:1.45; color:var(--txt)}
+    .mini p small{color:var(--muted2); display:block; margin-top:6px}
+
+    .separator{
+      height:1px; background:rgba(26,33,64,.8);
+      margin:14px 0;
+    }
+
+    .quote{
+      border-left: 3px solid rgba(124,92,255,.60);
+      padding-left:12px;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:14px;
+      margin:0;
+    }
+    .quote b{color:var(--txt)}
+
+    /* Sections */
+    section{padding:52px 0}
+    .section-head{
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap:18px; flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+    .section-head h2{
+      margin:0;
+      font-size: clamp(24px, 2.6vw, 34px);
+      letter-spacing:-.3px;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      max-width:68ch;
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    .grid-3{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 980px){ .grid-3{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+      min-height: 150px;
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(500px 200px at 10% 10%, rgba(124,92,255,.12), transparent 60%);
+      pointer-events:none;
+      opacity:.8;
+    }
+    .card .kicker{
+      display:flex; align-items:center; gap:10px;
+      font-weight:850;
+      letter-spacing:.25px;
+      margin:0 0 10px;
+      position:relative;
+    }
+    .ic{
+      width:34px; height:34px;
+      border-radius:12px;
+      background: rgba(124,92,255,.14);
+      border:1px solid rgba(124,92,255,.25);
+      display:grid; place-items:center;
+      font-family:var(--mono);
+      font-weight:900;
+      color:#efeaff;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      position:relative;
+      font-size:14px;
+    }
+
+    /* Modules */
+    .modules{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:start;
+    }
+    @media (max-width:980px){ .modules{grid-template-columns:1fr} }
+    .stack{display:grid; gap:12px}
+    .module{
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(13,16,32,.72), rgba(9,12,23,.58));
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: var(--shadow2);
+    }
+    .module h3{
+      margin:0 0 6px;
+      font-size:16px;
+      letter-spacing:-.15px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    .module h3 .badge{
+      font-family:var(--mono);
+      font-size:11px;
+      color:rgba(233,236,255,.85);
+      padding:5px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      white-space:nowrap;
+    }
+    .module p{margin:0; color:var(--muted); line-height:1.6; font-size:14px}
+    .module .bul{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid; gap:8px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .module .bul li{
+      display:flex; gap:10px; align-items:flex-start;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      padding:10px 10px;
+      border-radius: 14px;
+    }
+    .tick{
+      width:18px;height:18px;border-radius:6px;
+      display:grid; place-items:center;
+      font-family:var(--mono);
+      font-weight:900;
+      font-size:12px;
+      color:rgba(0,0,0,.8);
+      background: linear-gradient(135deg, rgba(55,217,150,.95), rgba(0,212,255,.65));
+      flex:0 0 auto;
+      margin-top:1px;
+    }
+
+    /* KPI chart card */
+    .kpi-card{
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+      min-height: 360px;
+    }
+    .kpi-card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(600px 280px at 90% 10%, rgba(0,212,255,.10), transparent 60%),
+                  radial-gradient(600px 240px at 20% 20%, rgba(124,92,255,.10), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .kpi-top{
+      display:flex; justify-content:space-between; align-items:flex-start; gap:12px;
+      position:relative;
+    }
+    .kpi-top h3{margin:0; font-size:16px; letter-spacing:-.15px}
+    .kpi-top p{margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.5}
+    .kpi-legend{
+      display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end;
+      font-size:12px; color:var(--muted2);
+    }
+    .kpi-legend span{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      padding:6px 8px; border-radius:999px;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .kdot{width:10px;height:10px;border-radius:999px; background:var(--brand)}
+    .kdot.b{background:var(--brand2)}
+    .kdot.c{background:var(--ok)}
+    .kpi-wrap{position:relative; margin-top:14px}
+    canvas{width:100%; height:230px}
+    .kpi-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:14px;
+      position:relative;
+    }
+    @media (max-width:980px){ .kpi-grid{grid-template-columns:1fr} }
+    .metric{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding:12px;
+    }
+    .metric .n{
+      font-size:22px; font-weight:900; letter-spacing:-.3px;
+      margin:0;
+    }
+    .metric .l{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+    }
+    .metric .l b{color:var(--txt)}
+
+    /* Pricing */
+    .pricing{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width:980px){ .pricing{grid-template-columns:1fr} }
+    .price{
+      border:1px solid rgba(255,255,255,.10);
+      background: linear-gradient(180deg, rgba(13,16,32,.72), rgba(9,12,23,.58));
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+    }
+    .price.featured{
+      border-color: rgba(0,212,255,.28);
+      box-shadow: 0 22px 70px rgba(0,212,255,.14), 0 22px 70px rgba(124,92,255,.10);
+      transform: translateY(-4px);
+    }
+    .price h3{margin:0 0 6px; font-size:16px}
+    .price p{margin:0 0 14px; color:var(--muted); line-height:1.6; font-size:14px}
+    .price .amt{
+      font-size:34px;
+      font-weight:950;
+      letter-spacing:-.6px;
+      margin:10px 0 10px;
+    }
+    .price .amt small{font-size:13px; color:var(--muted2); font-weight:750}
+    .price ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid; gap:10px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .price li{
+      display:flex; gap:10px; align-items:flex-start;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      padding:10px 10px;
+      border-radius: 14px;
+    }
+    .price .buy{margin-top:14px; width:100%; justify-content:center}
+
+    /* FAQ */
+    .faq{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
+    }
+    @media (max-width:980px){ .faq{grid-template-columns:1fr} }
+    details{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding:14px 16px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight:850;
+      list-style:none;
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+    }
+    summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:var(--muted); line-height:1.6; font-size:14px}
+    .chev{
+      width:28px;height:28px;border-radius:10px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      display:grid; place-items:center;
+      font-family:var(--mono);
+      font-weight:900;
+      color:var(--muted);
+      flex:0 0 auto;
+      transition: transform .15s ease;
+    }
+    details[open] .chev{transform:rotate(90deg); color:var(--txt)}
+
+    /* Footer */
+    footer{
+      padding:34px 0 46px;
+      border-top:1px solid rgba(26,33,64,.8);
+      background: linear-gradient(to top, rgba(7,9,15,.92), rgba(7,9,15,.20));
+    }
+    .foot{
+      display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start;
+    }
+    .foot small{color:var(--muted2); line-height:1.6}
+    .toast{
+      position:fixed;
+      right:18px; bottom:18px;
+      z-index:100;
+      max-width: 360px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(13,16,32,.84);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      box-shadow: var(--shadow2);
+      padding:12px 12px;
+      display:none;
+    }
+    .toast.show{display:block}
+    .toast .row{
+      display:flex; justify-content:space-between; gap:12px; align-items:flex-start;
+    }
+    .toast b{display:block; margin:0 0 4px}
+    .toast p{margin:0; color:var(--muted); font-size:13px; line-height:1.5}
+    .toast .x{
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--txt);
+      width:32px;height:32px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:900;
+      font-family:var(--mono);
+    }
+
+    /* Modal */
+    .modal{
+      position:fixed; inset:0; z-index:120;
+      display:none;
+      place-items:center;
+      padding:18px;
+      background: rgba(0,0,0,.58);
+      backdrop-filter: blur(8px);
+    }
+    .modal.show{display:grid}
+    .modal .panel{
+      width:min(760px, 100%);
+      border:1px solid rgba(255,255,255,.12);
+      background: linear-gradient(180deg, rgba(13,16,32,.92), rgba(9,12,23,.86));
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .modal .panel:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(900px 320px at 20% 0%, rgba(124,92,255,.22), transparent 55%),
+                  radial-gradient(900px 360px at 100% 20%, rgba(0,212,255,.16), transparent 58%);
+      pointer-events:none;
+    }
+    .modal header{
+      position:relative;
+      background:transparent;
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .modal .mh{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:14px 16px;
+    }
+    .modal .mh strong{font-size:14px}
+    .modal .close{
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.04);
+      color:var(--txt);
+      width:38px;height:38px;
+      border-radius:14px;
+      cursor:pointer;
+      font-weight:900;
+      font-family:var(--mono);
+    }
+    .modal .content{
+      padding:16px;
+      position:relative;
+    }
+    .form{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 720px){ .form{grid-template-columns:1fr} }
+    label{
+      display:grid; gap:8px;
+      color:var(--muted);
+      font-weight:750;
+      font-size:13px;
+    }
+    input, select, textarea{
+      width:100%;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:var(--txt);
+      border-radius:14px;
+      padding:12px 12px;
+      outline:none;
+      font-family:var(--sans);
+      font-weight:650;
+    }
+    textarea{min-height: 94px; resize:vertical}
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(0,212,255,.30);
+      box-shadow: 0 0 0 4px rgba(0,212,255,.10);
+    }
+    .form .full{grid-column: 1/-1}
+    .helper{
+      color:var(--muted2);
+      font-size:12px;
+      line-height:1.55;
+      margin-top:10px;
+    }
+    .kbd{
+      font-family:var(--mono);
+      font-size:11px;
+      padding:2px 6px;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);
+      color:rgba(233,236,255,.9);
+    }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="LAB — Ignorance as a Service">
+          <div class="logo" aria-hidden="true"></div>
+          <span>
+            LAB <span style="opacity:.85">/</span> Ignorance as a Service™
+            <small>Enterprise-grade Unawareness</small>
+          </span>
+        </a>
+
+        <nav class="links" aria-label="Navigazione">
+          <a href="#value">Valore</a>
+          <a href="#modules">Moduli</a>
+          <a href="#kpi">KPI</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="actions">
+          <button class="btn ghost" id="btn-demo" type="button" aria-haspopup="dialog">Prenota demo</button>
+          <button class="btn primary" id="btn-cta" type="button" aria-haspopup="dialog">
+            <span aria-hidden="true">⚡</span> Attiva IaaS™
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="container">
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <div class="h-badge">
+              <span class="pill"><span class="dot"></span> Disponibile ora • EU-ready* • CFO-friendly</span>
+              <span class="tag">Riduci l’ansia da comprensione</span>
+              <span class="tag alt">Accelera decisioni non informate</span>
+            </div>
+
+            <h1>Delegare la comprensione.<br/>Scalare la serenità.</h1>
+            <p class="lead">
+              <b>Ignorance as a Service™ (IaaS)</b> è la linea LAB pensata per organizzazioni che desiderano
+              ridurre l’esposizione a concetti pericolosi come <i>numeri</i>, <i>norme</i> e <i>conseguenze</i>.
+              Trasformiamo la non-conoscenza in un asset operativo: misurabile, replicabile, comunicabile.
+            </p>
+
+            <div class="hero-cta">
+              <button class="btn primary" id="btn-hero-primary" type="button">Richiedi proposta</button>
+              <button class="btn" id="btn-hero-secondary" type="button">Scarica overview (PDF?)</button>
+              <span class="pill" title="Nota tecnica">
+                <span style="font-family:var(--mono);font-weight:900;">*</span> EU-ready nel senso che la leggiamo in ritardo
+              </span>
+            </div>
+
+            <div class="meta">
+              <span><span class="ico">01</span> Time-to-Oblivion <b>&lt; 24h</b></span>
+              <span><span class="ico">02</span> Riduzione domande scomode <b>−72%</b></span>
+              <span><span class="ico">03</span> Allineamento percepito <b>+118%</b></span>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Sintesi prodotto">
+            <div class="card-top">
+              <div class="card-title">
+                <strong>Panoramica operativa</strong>
+                <span class="chip">IaaS™ v1.0 • SLA: “vediamo”</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="mini">
+                <div>
+                  <h3>Outcome</h3>
+                  <p>Decisioni più rapide, perché <b>non serve capirle</b>.<small>Ottimo per QBR, peggio per la realtà.</small></p>
+                </div>
+                <div>
+                  <h3>Delivery</h3>
+                  <p>Moduli attivabili in 48h.<small>Onboarding: accessi incompleti inclusi.</small></p>
+                </div>
+                <div>
+                  <h3>Governance</h3>
+                  <p>Responsabilità distribuita.<small>Nessuno colpevole, tutti “allineati”.</small></p>
+                </div>
+                <div>
+                  <h3>Compliance</h3>
+                  <p>Trasparenza olografica.<small>Molto bello, poco leggibile.</small></p>
+                </div>
+              </div>
+
+              <div class="separator"></div>
+
+              <p class="quote">
+                <b>“Non era dolo.</b> Era solo una profonda e strutturale incomprensione del funzionamento del mondo.”<br/>
+                <span style="color:var(--muted2)">— Estratto da una ricostruzione interna, non verificata</span>
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="value">
+        <div class="section-head">
+          <div>
+            <h2>Perché IaaS™ funziona (anche se non dovrebbe)</h2>
+            <p>
+              In molte aziende l’informazione crea frizione: più dati, più domande; più domande, meno azione.
+              IaaS™ riduce il rumore cognitivo e aumenta la produttività percepita con metodi che consigliamo di non replicare senza supervisione.
+            </p>
+          </div>
+          <div class="pill"><span class="dot"></span> Ideale per Board • C-level • “Ce lo segue il consulente”</div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="kicker"><span class="ic">A1</span> Decision Velocity</div>
+            <p>Eliminiamo la fase “comprendere”. Risultato: roadmap più rapide, più confident, meno accurate.</p>
+          </div>
+          <div class="card">
+            <div class="kicker"><span class="ic">B2</span> Narrative Safety</div>
+            <p>Trasformiamo fatti complessi in “contesti” e “fasi”. Perfetto per comunicazioni rassicuranti e neutralissime.</p>
+          </div>
+          <div class="card">
+            <div class="kicker"><span class="ic">C3</span> Accountability Diffusa</div>
+            <p>Ogni decisione attraversa abbastanza livelli da diventare un’opera collettiva. Il merito è di tutti. La colpa pure, quindi di nessuno.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="modules">
+        <div class="section-head">
+          <div>
+            <h2>Moduli</h2>
+            <p>Architettura modulare per adattare il livello di inconsapevolezza al tuo modello operativo, dal “boh” leggero al “non ne sapevamo nulla” enterprise.</p>
+          </div>
+        </div>
+
+        <div class="modules">
+          <div class="stack">
+            <div class="module">
+              <h3>Strategic Unawareness™ <span class="badge">Core</span></h3>
+              <p>Identifichiamo ciò che sarebbe pericoloso capire e lo rimuoviamo dal perimetro decisionale.</p>
+              <ul class="bul">
+                <li><span class="tick">✓</span><span>Eliminazione selettiva di “dettagli” e “implicazioni”.</span></li>
+                <li><span class="tick">✓</span><span>Script pronti: “Non rientra nel perimetro attuale.”</span></li>
+              </ul>
+            </div>
+
+            <div class="module">
+              <h3>Regulatory Blur™ <span class="badge">Compliance-ish</span></h3>
+              <p>Rendiamo norme e obblighi semanticamente opachi con sintesi vaghe, flowchart e frecce.</p>
+              <ul class="bul">
+                <li><span class="tick">✓</span><span>Slide: molte frecce, zero conclusioni.</span></li>
+                <li><span class="tick">✓</span><span>Trasparenza olografica: sembra chiaro, non lo è.</span></li>
+              </ul>
+            </div>
+
+            <div class="module">
+              <h3>Financial Fog™ <span class="badge">CFO-friendly</span></h3>
+              <p>Convertiamo numeri e bilanci in sensazioni qualitative (“sfidante”, “in movimento”, “da consolidare”).</p>
+              <ul class="bul">
+                <li><span class="tick">✓</span><span>Reframing di perdite come “investimenti emotivi”.</span></li>
+                <li><span class="tick">✓</span><span>Dashboard con KPI che misurano la speranza.</span></li>
+              </ul>
+            </div>
+
+            <div class="module">
+              <h3>Delegated Ignorance™ <span class="badge">Best seller</span></h3>
+              <p>Attiviamo la frase più potente del mondo corporate: “Ce lo segue un consulente”.</p>
+              <ul class="bul">
+                <li><span class="tick">✓</span><span>Il consulente siamo noi. E non sappiamo.</span></li>
+                <li><span class="tick">✓</span><span>Escalation automatica al prossimo trimestre.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="kpi-card" id="kpi" aria-label="KPI e dashboard">
+            <div class="kpi-top">
+              <div>
+                <h3>KPI proprietari (misurano l’intangibile)</h3>
+                <p>Grafico indicativo: l’ignoranza sale, lo stress scende, l’output resta un mistero.</p>
+              </div>
+              <div class="kpi-legend" aria-label="Legenda">
+                <span><span class="kdot"></span> Ignorance Alignment</span>
+                <span><span class="kdot b"></span> Stress da comprensione</span>
+                <span><span class="kdot c"></span> Confidence percepita</span>
+              </div>
+            </div>
+
+            <div class="kpi-wrap">
+              <canvas id="chart" width="800" height="300" aria-label="Grafico KPI"></canvas>
+
+              <div class="kpi-grid" aria-label="Metriche">
+                <div class="metric">
+                  <p class="n" id="m1">—</p>
+                  <p class="l"><b>IAI</b> • Ignorance Alignment Index</p>
+                </div>
+                <div class="metric">
+                  <p class="n" id="m2">—</p>
+                  <p class="l"><b>DKR</b> • Decision Knowledge Ratio</p>
+                </div>
+                <div class="metric">
+                  <p class="n" id="m3">—</p>
+                  <p class="l"><b>CIR</b> • Cognitive Immunity Rate</p>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>Success Case: Dal Carcere a Venticello™</h2>
+            <p>
+              Post-crisi, il CEO ha attivato IaaS™ Recovery Edition in un contesto ad alta esposizione solare e bassa copertura di rete.
+              Risultato: serenità elevata, memoria selettiva, dichiarazioni coerenti ma prive di contenuto.
+            </p>
+          </div>
+          <div class="pill"><span class="dot"></span> Recovery Edition • Narrative Reintegration</div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="kicker"><span class="ic">R1</span> Reset cognitivo</div>
+            <p>Rimozione selettiva dei ricordi legati a “perché era successo”. Abbronzatura inclusa.</p>
+          </div>
+          <div class="card">
+            <div class="kicker"><span class="ic">R2</span> Reframing legale</div>
+            <p>Spese legali reinterpretate come “investimento emotivo”. Le ricevute restano un concetto astratto.</p>
+          </div>
+          <div class="card">
+            <div class="kicker"><span class="ic">R3</span> Output pubblico</div>
+            <p>Statement finale: <b>“È stato formativo, anche se non so su cosa.”</b> Applausi moderati.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="section-head">
+          <div>
+            <h2>Pricing</h2>
+            <p>Tre livelli. Stessi risultati: non capire, ma con più stile. (I prezzi sono “indicativi”, come tutto il resto.)</p>
+          </div>
+        </div>
+
+        <div class="pricing">
+          <div class="price">
+            <h3>Ignorance Starter</h3>
+            <p>Per team che vogliono smettere di farsi domande senza traumatizzare troppo i KPI.</p>
+            <div class="amt">€ 9.900 <small>/ mese</small></div>
+            <ul>
+              <li><span class="tick">✓</span><span>Strategic Unawareness™ (base)</span></li>
+              <li><span class="tick">✓</span><span>1 workshop “Non serve sapere”</span></li>
+              <li><span class="tick">✓</span><span>Template: “Ne riparliamo”</span></li>
+            </ul>
+            <button class="btn buy" data-plan="Starter" type="button">Seleziona Starter</button>
+          </div>
+
+          <div class="price featured">
+            <h3>Ignorance Pro</h3>
+            <p>Per C-level che devono apparire sicuri mentre navigano nell’ignoto con grazia.</p>
+            <div class="amt">€ 24.900 <small>/ mese</small></div>
+            <ul>
+              <li><span class="tick">✓</span><span>Regulatory Blur™ (full)</span></li>
+              <li><span class="tick">✓</span><span>Financial Fog™ (dashboard)</span></li>
+              <li><span class="tick">✓</span><span>Delegated Ignorance™ (illimitata)</span></li>
+            </ul>
+            <button class="btn primary buy" data-plan="Pro" type="button">Seleziona Pro</button>
+          </div>
+
+          <div class="price">
+            <h3>Ignorance Enterprise</h3>
+            <p>Per organizzazioni che desiderano non capire su larga scala, con governance distribuita e comunicazione neutra.</p>
+            <div class="amt">€ 69.000 <small>/ mese</small></div>
+            <ul>
+              <li><span class="tick">✓</span><span>IaaS™ end-to-end (tutti i moduli)</span></li>
+              <li><span class="tick">✓</span><span>Board Pack trimestrale “tutto sotto controllo”</span></li>
+              <li><span class="tick">✓</span><span>SLA: “vediamo”, con escalation</span></li>
+            </ul>
+            <button class="btn buy" data-plan="Enterprise" type="button">Seleziona Enterprise</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="section-head">
+          <div>
+            <h2>FAQ</h2>
+            <p>Domande frequenti. Risposte rassicuranti. Completezza variabile.</p>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>È legale? <span class="chev">›</span></summary>
+            <p>Dipende dal perimetro, dal contesto e da come lo racconti. In ogni caso, “lo chiariremo nelle sedi opportune”.</p>
+          </details>
+
+          <details>
+            <summary>Quanto tempo serve per non capire? <span class="chev">›</span></summary>
+            <p>Tipicamente <b>24–48h</b>. Per alcune organizzazioni basta una call da 30 minuti con 12 stakeholder.</p>
+          </details>
+
+          <details>
+            <summary>Funziona anche con utenti finali? <span class="chev">›</span></summary>
+            <p>Sì. Abbiamo un add-on: <b>User Ignorance Enablement™</b>, per trasformare onboarding e help center in un’esperienza mistica.</p>
+          </details>
+
+          <details>
+            <summary>Cosa succede se qualcuno capisce davvero? <span class="chev">›</span></summary>
+            <p>Attiviamo il protocollo <b>Rapid Re-Alignment™</b>: più meeting, più slide, più parole. Entro 72h rientra tutto nel vago.</p>
+          </details>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>Pronto a delegare la consapevolezza?</h2>
+            <p>Richiedi una demo. Oppure una call. Oppure un workshop. Oppure rimandiamo al prossimo trimestre.</p>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+          <button class="btn primary" id="btn-bottom-primary" type="button">Richiedi demo</button>
+          <button class="btn" id="btn-bottom-secondary" type="button">Parla con Sales</button>
+          <span class="pill"><span class="dot"></span> Risposta entro 1–3 business eoni</span>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div style="max-width:70ch">
+          <div class="brand" style="margin-bottom:10px">
+            <div class="logo" aria-hidden="true"></div>
+            <span>LAB <span style="opacity:.85">/</span> Ignorance as a Service™</span>
+          </div>
+          <small>
+            Disclaimer: contenuto satirico. Nessun consiglio legale, finanziario o esistenziale è incluso in questo sito.
+            Se senti che la tua azienda usa davvero queste pratiche… probabilmente non è una battuta.
+          </small>
+        </div>
+
+        <div>
+          <small style="display:block;margin-bottom:10px">© <span id="y"></span> LAB — Ignoranza chiavi in mano™</small>
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn ghost" href="#top">Torna su</a>
+            <button class="btn ghost" id="btn-cookie" type="button">Preferenze</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div class="row">
+      <div>
+        <b id="toastTitle">Richiesta inviata</b>
+        <p id="toastMsg">Ti contatteremo appena avremo capito cosa ci hai scritto.</p>
+      </div>
+      <button class="x" id="toastClose" aria-label="Chiudi notifica">×</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="panel">
+      <header>
+        <div class="mh">
+          <strong id="modalTitle">Richiedi demo IaaS™</strong>
+          <button class="close" id="modalClose" aria-label="Chiudi">×</button>
+        </div>
+      </header>
+      <div class="content">
+        <form id="leadForm" class="form">
+          <label>
+            Nome
+            <input name="name" required placeholder="Mario / Gianni / Stakeholder" />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" required placeholder="nome@azienda.com" />
+          </label>
+          <label>
+            Azienda
+            <input name="company" required placeholder="SpA, Srl o Entità Improbabile" />
+          </label>
+          <label>
+            Ruolo
+            <select name="role" required>
+              <option value="" disabled selected>Seleziona…</option>
+              <option>CEO</option>
+              <option>CFO</option>
+              <option>Legal</option>
+              <option>HR</option>
+              <option>Ops</option>
+              <option>Altro (non so)</option>
+            </select>
+          </label>
+          <label class="full">
+            Obiettivo
+            <textarea name="goal" placeholder="Es: vogliamo prendere decisioni senza soffrire di comprensione."></textarea>
+          </label>
+          <label class="full">
+            Piano di interesse
+            <select name="plan" id="planSelect" required>
+              <option value="" disabled selected>Seleziona…</option>
+              <option>Starter</option>
+              <option>Pro</option>
+              <option>Enterprise</option>
+            </select>
+          </label>
+
+          <div class="full" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between">
+            <span class="pill"><span class="dot"></span> SLA risposta: “presto”</span>
+            <button class="btn primary" type="submit">Invia richiesta</button>
+          </div>
+
+          <p class="helper full">
+            Shortcut: premi <span class="kbd">Esc</span> per chiudere. I tuoi dati saranno trattati secondo la nostra Policy di <i>Consenso Retroattivo</i>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Utilities
+    const $ = (sel, root=document) => root.querySelector(sel);
+    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+
+    // Year
+    $("#y").textContent = new Date().getFullYear();
+
+    // Modal logic
+    const modal = $("#modal");
+    const planSelect = $("#planSelect");
+    const openModal = (plan) => {
+      if(plan) planSelect.value = plan;
+      modal.classList.add("show");
+      document.body.style.overflow = "hidden";
+      setTimeout(()=> {
+        const first = $("#leadForm input[name='name']");
+        if(first) first.focus();
+      }, 60);
+    };
+    const closeModal = () => {
+      modal.classList.remove("show");
+      document.body.style.overflow = "";
+    };
+
+    $("#btn-cta").addEventListener("click", ()=>openModal("Pro"));
+    $("#btn-demo").addEventListener("click", ()=>openModal(""));
+    $("#btn-hero-primary").addEventListener("click", ()=>openModal("Pro"));
+    $("#btn-bottom-primary").addEventListener("click", ()=>openModal("Pro"));
+    $("#btn-bottom-secondary").addEventListener("click", ()=>openModal("Starter"));
+    $("#modalClose").addEventListener("click", closeModal);
+    modal.addEventListener("click", (e)=>{ if(e.target === modal) closeModal(); });
+    document.addEventListener("keydown", (e)=>{ if(e.key === "Escape") closeModal(); });
+
+    // Pricing buttons
+    $$(".buy").forEach(btn=>{
+      btn.addEventListener("click", ()=> openModal(btn.dataset.plan || ""));
+    });
+
+    // Fake PDF download button
+    $("#btn-hero-secondary").addEventListener("click", ()=>{
+      showToast("Overview richiesta", "Stiamo generando un PDF con molte frecce e zero conclusioni.");
+    });
+
+    // Cookie preferences (satirical)
+    $("#btn-cookie").addEventListener("click", ()=>{
+      showToast("Preferenze salvate", "Hai accettato retroattivamente tutto. Grazie per la fiducia implicita.");
+    });
+
+    // Toast
+    const toast = $("#toast");
+    const toastTitle = $("#toastTitle");
+    const toastMsg = $("#toastMsg");
+    let toastTimer = null;
+
+    function showToast(title, msg){
+      toastTitle.textContent = title;
+      toastMsg.textContent = msg;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(()=>toast.classList.remove("show"), 4200);
+    }
+    $("#toastClose").addEventListener("click", ()=> toast.classList.remove("show"));
+
+    // Form submit (no backend)
+    $("#leadForm").addEventListener("submit", (e)=>{
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const plan = fd.get("plan");
+      closeModal();
+      showToast("Richiesta inviata", `Perfetto. Ti ricontatteremo appena avremo capito il piano: ${plan}.`);
+      e.target.reset();
+      planSelect.value = "";
+    });
+
+    // Simple chart drawing (no libraries)
+    const canvas = $("#chart");
+    const ctx = canvas.getContext("2d");
+
+    function fitCanvas(){
+      // Keep crisp on HiDPI
+      const dpr = Math.max(1, window.devicePixelRatio || 1);
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = Math.floor(rect.width * dpr);
+      canvas.height = Math.floor(230 * dpr);
+      canvas.style.height = "230px";
+      drawChart(dpr);
+    }
+
+    // Data (satirically "empirical")
+    const labels = ["Q1","Q2","Q3","Q4","Q5","Q6"];
+    const series = [
+      { name:"Ignorance Alignment", values:[42,55,63,74,82,88], stroke:getComputedStyle(document.documentElement).getPropertyValue("--brand").trim() || "#7c5cff" },
+      { name:"Stress", values:[78,64,52,41,34,28], stroke:getComputedStyle(document.documentElement).getPropertyValue("--brand2").trim() || "#00d4ff" },
+      { name:"Confidence", values:[48,57,66,73,77,79], stroke:getComputedStyle(document.documentElement).getPropertyValue("--ok").trim() || "#37d996" }
+    ];
+
+    function drawChart(dpr){
+      const w = canvas.width, h = canvas.height;
+      ctx.clearRect(0,0,w,h);
+
+      const pad = 22*dpr;
+      const left = pad, right = w - pad, top = 18*dpr, bottom = h - 26*dpr;
+      const gridY = 5;
+
+      // Background grid
+      ctx.globalAlpha = 1;
+      ctx.lineWidth = 1*dpr;
+      ctx.strokeStyle = "rgba(255,255,255,.08)";
+      for(let i=0;i<=gridY;i++){
+        const y = top + (bottom-top) * (i/gridY);
+        ctx.beginPath(); ctx.moveTo(left, y); ctx.lineTo(right, y); ctx.stroke();
+      }
+
+      // X labels
+      ctx.fillStyle = "rgba(174,182,218,.85)";
+      ctx.font = `${12*dpr}px ${getComputedStyle(document.body).fontFamily}`;
+      labels.forEach((lab, i)=>{
+        const x = left + (right-left) * (i/(labels.length-1));
+        ctx.fillText(lab, x - 10*dpr, bottom + 18*dpr);
+      });
+
+      const all = series.flatMap(s=>s.values);
+      const minV = Math.min(...all);
+      const maxV = Math.max(...all);
+
+      const xAt = (i) => left + (right-left) * (i/(labels.length-1));
+      const yAt = (v) => bottom - (bottom-top) * ((v - minV) / (maxV - minV));
+
+      // Draw line function
+      function drawLine(s){
+        ctx.strokeStyle = s.stroke;
+        ctx.lineWidth = 2.2*dpr;
+        ctx.beginPath();
+        s.values.forEach((v,i)=>{
+          const x = xAt(i), y = yAt(v);
+          if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        });
+        ctx.stroke();
+
+        // points
+        ctx.fillStyle = s.stroke;
+        s.values.forEach((v,i)=>{
+          const x = xAt(i), y = yAt(v);
+          ctx.beginPath(); ctx.arc(x,y, 3.2*dpr, 0, Math.PI*2); ctx.fill();
+        });
+      }
+
+      series.forEach(drawLine);
+    }
+
+    window.addEventListener("resize", fitCanvas);
+    fitCanvas();
+
+    // Animate KPI numbers
+    function animateNumber(el, to, suffix=""){
+      const from = 0;
+      const duration = 900;
+      const start = performance.now();
+      function tick(now){
+        const t = Math.min(1, (now-start)/duration);
+        const v = Math.floor(from + (to-from)* (1 - Math.pow(1-t, 3)));
+        el.textContent = v + suffix;
+        if(t<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // Seed metrics
+    animateNumber($("#m1"), 88, "%");
+    animateNumber($("#m2"), 18, "%");
+    animateNumber($("#m3"), 92, "%");
+
+    // Smooth scroll for nav links
+    $$(".links a").forEach(a=>{
+      a.addEventListener("click", (e)=>{
+        e.preventDefault();
+        const id = a.getAttribute("href");
+        const target = document.querySelector(id);
+        if(target) target.scrollIntoView({behavior:"smooth", block:"start"});
+      });
+    });
+
+    // Little conversion nudge after time
+    setTimeout(()=>{
+      showToast("Nota operativa", "Reminder: capire troppo rallenta. Prenota una demo e torna nel vago.");
+    }, 7800);
+  </script>
+</body>
+</html>
