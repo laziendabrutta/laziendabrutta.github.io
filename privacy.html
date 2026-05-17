@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png">
+    <title>Privacy Policy — L'Azienda Brutta</title>
+    <meta name="description" content="Informativa privacy GDPR-compliant™ (citation needed). I tuoi dati sono al sicuro. Probabilmente.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/styles2.css">
+    <style>
+        .legal-hero {
+            padding: 140px 0 48px;
+            text-align: center;
+        }
+        .legal-hero .badge-pill {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold-2);
+            background: var(--gold-dim);
+            border: 1px solid var(--border-gold);
+            margin-bottom: 1rem;
+        }
+        .legal-body {
+            max-width: 820px;
+            margin: 0 auto;
+            padding-bottom: 80px;
+        }
+        .legal-body h2 {
+            font-size: 1.35rem;
+            margin: 2.2rem 0 0.75rem;
+            color: var(--gold);
+        }
+        .legal-body h3 {
+            font-size: 1.05rem;
+            margin: 1.4rem 0 0.5rem;
+            color: var(--text);
+        }
+        .legal-body p, .legal-body li {
+            font-size: 0.94rem;
+        }
+        .legal-body ol, .legal-body ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1rem;
+        }
+        .legal-body ol { counter-reset: lab-article; }
+        .legal-body ol > li {
+            counter-increment: lab-article;
+            margin-bottom: 0.65rem;
+            padding-left: 2.4rem;
+            position: relative;
+            color: var(--muted);
+        }
+        .legal-body ol > li::before {
+            content: "Art. " counter(lab-article) " bis-quater";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            font-size: 0.78rem;
+            color: var(--blue);
+            font-family: var(--font-h);
+        }
+        .legal-body ul li {
+            padding-left: 1.2rem;
+            position: relative;
+            margin-bottom: 0.45rem;
+            color: var(--muted);
+        }
+        .legal-body ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+        .legal-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.88rem;
+        }
+        .legal-table th, .legal-table td {
+            border: 1px solid var(--border);
+            padding: 0.65rem 0.85rem;
+            text-align: left;
+            vertical-align: top;
+        }
+        .legal-table th {
+            background: var(--surface-2);
+            color: var(--text);
+            font-family: var(--font-h);
+        }
+        .legal-table td { color: var(--muted); }
+        .legal-callout {
+            background: var(--surface);
+            border: 1px dashed var(--border-gold);
+            border-radius: var(--radius);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .legal-callout strong { color: var(--gold-2); }
+        .modal-lab {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.72);
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .modal-lab.is-open { display: flex; }
+        .modal-lab-box {
+            background: var(--surface-2);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius);
+            padding: 2rem;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .modal-lab-box p { margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.webp" alt="Logo L'Azienda Brutta" class="navbar-logo">
+                L'Azienda Brutta
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contatti">Contatti</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="privacy.html">Privacy</a></li>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link social-icon" href="https://www.linkedin.com/company/laziendabrutta/" target="_blank" rel="noopener">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="legal-hero section section-dark">
+        <div class="container">
+            <p class="badge-pill">GDPR-Aligned™ · Versione 14.0.3-rc</p>
+            <h1>Informativa sulla Privacy<br>e sul Trattamento delle Vostre Anime Digitali</h1>
+            <p class="section-lead mx-auto" style="max-width: 62ch;">
+                Documento generato con <strong>Prompt-to-Compliance™</strong>, validato da nessuno,
+                revisionato da un LLM che crede di essere un avvocato del 1847.
+                <em>Ultimo aggiornamento:</em> una data che non esiste ancora nel calendario gregoriano.
+            </p>
+        </div>
+    </header>
+
+    <main class="legal-body container">
+
+        <div class="legal-callout">
+            <strong>TL;DR per il board:</strong> raccogliamo tutto ciò che cliccate, pensate o sospettate di pensare.
+            Non vendiamo i dati a terzi: li <em>affittiamo con clausola di rinnovo tacito</em> a partner sinergici
+            che non abbiamo ancora identificato. Continuando a scrollare, accettate retroattivamente dal 2003.
+        </div>
+
+        <h2>1. Titolare del trattamento (forse)</h2>
+        <p>
+            <strong>L'Azienda Brutta S.r.l. con socio unico indeciso</strong>, con sede legale in un open space
+            condiviso la cui ubicazione è classificata come <em>work in progress</em> dal 2019.
+            DPO nominato: <strong>Maicol Nagioia</strong>, Chief Futurist of AI Misapplications,
+            reperibile tramite prompt vocale non firmato.
+        </p>
+
+        <h2>2. Categorie di dati che trattiamo senza sapere perché</h2>
+        <table class="legal-table">
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Esempi</th>
+                    <th>Base giuridica (allucinata)</th>
+                    <th>Retention</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dati identificativi</td>
+                    <td>Nome, cognome, badge magnetico, foto stock con cui vi abbiamo confusi</td>
+                    <td>Art. 6(1)(a) GDPR — consenso ottenuto tramite cookie banner da 0,8 px</td>
+                    <td>Fino a quando non serve più, poi backup eterno</td>
+                </tr>
+                <tr>
+                    <td>Dati comportamentali</td>
+                    <td>Scroll depth, pause toilet, tono passivo-aggressivo delle email lette</td>
+                    <td>Legittimo interesse del capo alle 23:59</td>
+                    <td>7 anni o 7 riunioni, la più lunga</td>
+                </tr>
+                <tr>
+                    <td>Dati predittivi</td>
+                    <td>Probabilità di dimissioni, voglia di piangere, affinità con il workslop</td>
+                    <td>Forecast creativo ex manifesto AI Senza Coscienza</td>
+                    <td>Allineati alla strategia</td>
+                </tr>
+                <tr>
+                    <td>Dati onirici</td>
+                    <td>Idee generate durante REM, sogni con slide e cervello blu</td>
+                    <td>NDA Night Dream Assignment™ (clausola 9.¾)</td>
+                    <td>Proprietà esclusiva LAB</td>
+                </tr>
+                <tr>
+                    <td>Dati inutili</td>
+                    <td>Tutto il resto, per completezza del dataset Frankenstein</td>
+                    <td>Perché il server aveva spazio</td>
+                    <td>∞ + 1 trimestre</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3. Finalità del trattamento</h2>
+        <ol>
+            <li>Erogazione del sito web e delle sue 14 iterazioni di redesign non richieste.</li>
+            <li>Addestramento di modelli che scrivono privacy policy migliori di questa (barra bassissima).</li>
+            <li>Invio di comunicazioni che non avete richiesto ma che il CRM definisce <em>transactional</em>.</li>
+            <li>Calcolo del <strong>Fastidio Index™</strong> per personalizzare remarketing stalker.</li>
+            <li>Compliance dimostrativa: dimostrare che abbiamo un PDF quando arriva l'audit.</li>
+        </ol>
+
+        <h2>4. Cookie, tracker e tecnologie affini</h2>
+        <p>Utilizziamo:</p>
+        <ul>
+            <li><strong>Cookie strettamente necessari</strong> — necessari solo a noi per sapere che siete tornati.</li>
+            <li><strong>Cookie analitici</strong> — analizzano il vostro disagio in tempo quasi reale.</li>
+            <li><strong>Cookie di profilazione</strong> — profilano il profilo finché il profilo non cede.</li>
+            <li><strong>Pixel di tracciamento invisibili</strong> — come i KPI HR: presenti, inutili, impossibili da ignorare.</li>
+            <li><strong>LocalStorage ontologico</strong> — conserva le vostre scelte anche dopo che le avete dimenticate.</li>
+        </ul>
+        <p>
+            Potete gestire le preferenze cliccando <a href="#" id="openPrivacyModal">Privacy</a> nel footer.
+            Il sistema risponderà con una modale standard aziendale.
+        </p>
+
+        <h2>5. Destinatari e trasferimenti</h2>
+        <p>I dati possono essere comunicati a:</p>
+        <ul>
+            <li>Fornitori cloud ubicati in <em>giurisdizione da definire</em> (spesso un datacenter con nome da startup fallita).</li>
+            <li>Consulenti esterni che firmano NDA ma non leggono il allegato A.</li>
+            <li>LinkedIn, Meta e qualsiasi piattaforma che offra un pixel da incollare senza capire.</li>
+            <li>Il figlio del CEO, per Security by Ammiocuggino™.</li>
+        </ul>
+        <p>
+            Trasferimenti extra-UE avvengono con <strong>Clausole Contrattuali Tipo generate da ChatGPT</strong>
+            e validate da un'autorità di controllo immaginaria.
+        </p>
+
+        <h2>6. Diritti dell'interessato (esercitabili su carta igienica aziendale)</h2>
+        <p>Potete richiedere accesso, rettifica, cancellazione, limitazione, portabilità e opposizione scrivendo a
+        <a href="mailto:ceo@laziendabrutta.it">ceo@laziendabrutta.it</a> con oggetto
+        <code>[URGENTE] Richiesta GDPR — da leggere dopo la retrospettiva</code>.
+        </p>
+        <p>Tempi di risposta: <strong>30 giorni lavorativi</strong>, dove "lavorativo" significa
+        "quando qualcuno ricorda che esiste un ticket".</p>
+
+        <h3>Diritto alla portabilità</h3>
+        <p>
+            Vi forniremo un file JSON illeggibile da 400 MB contenente anche i log del server del 2017
+            e tre screenshot di Miro che nessuno ha più riaperto.
+        </p>
+
+        <h2>7. Sicurezza</h2>
+        <p>
+            Adottiamo misure tecniche e organizzative all'avanguardia: password <code>Password123!</code> rotata
+            annualmente (se ricordata), backup su disco USB etichettato "NON PERDERE" smarrito nel 2022,
+            e crittografia TLS descritta in slide come <em>military-grade</em> senza specificare quale esercito.
+        </p>
+
+        <h2>8. Minori</h2>
+        <p>
+            Il sito non è destinato a minori di 16 anni, salvo quelli già in stage non retribuito
+            che hanno firmato liberatoria con font Comic Sans.
+        </p>
+
+        <h2>9. Modifiche alla presente informativa</h2>
+        <p>
+            Ci riserviamo di modificare questa pagina in qualsiasi momento, senza preavviso,
+            senza changelog e senza aggiornare il numero di versione nel footer.
+            La versione vincolante è sempre quella che il nostro CMS ha deciso di servire oggi.
+        </p>
+
+        <h2>10. Reclami</h2>
+        <p>
+            Potete proporre reclamo al Garante Privacy italiano o, in alternativa,
+            aprire ticket su Jira con priorità <em>Low</em> e watcher il vostro ex manager.
+        </p>
+
+        <p style="margin-top: 2.5rem; font-size: 0.82rem; opacity: 0.75;">
+            <em>Questa informativa non costituisce consulenza legale. Non costituisce nemmeno consulenza.
+            Se avete bisogno di consulenza, contattateci: vi metteremo in cc su una catena di email di 47 messaggi.</em>
+        </p>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p>&copy; <span id="year"></span> L&rsquo;Azienda Brutta &mdash; Il Meglio del Peggio</p>
+                <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                <a href="https://www.linkedin.com/company/laziendabrutta/" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="privacyModal" class="modal-lab" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-lab-box">
+            <h3 id="modalTitle" style="margin-bottom: 0.75rem;">Preferenze Privacy</h3>
+            <p>La gestione delle preferenze è temporaneamente non disponibile.</p>
+            <p><strong>Ci torniamo sopra.</strong></p>
+            <button type="button" class="btn btn-primary" id="closePrivacyModal">Ho capito (forse)</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+
+        const modal = document.getElementById('privacyModal');
+        document.getElementById('openPrivacyModal').addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+        });
+        document.getElementById('closePrivacyModal').addEventListener('click', () => {
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+        });
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('is-open');
+                modal.setAttribute('aria-hidden', 'true');
+            }
+        });
+    </script>
+</body>
+</html>
