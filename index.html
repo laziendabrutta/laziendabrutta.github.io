@@ -3,42 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Azienda Brutta (LAB) – Società di consulenza satirica | Innovativi nel sembrare innovativi</title>
+    <meta name="description" content="L'Azienda Brutta (LAB) è una finta società di consulenza che prende in giro il mondo aziendale: HR TraumaOriented™, Smart Insolvency™, Disruptive Delay 360™, white paper, certificazione di tossicità e posizioni aperte. Satira, ovviamente.">
+    <meta name="author" content="L'Azienda Brutta">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#090D18">
+    <link rel="canonical" href="https://laziendabrutta.it/">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="L'Azienda Brutta">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:url" content="https://laziendabrutta.it/">
+    <meta property="og:title" content="L'Azienda Brutta (LAB) – Il Meglio del Peggio">
+    <meta property="og:description" content="Società di consulenza satirica e fittizia. Innovazione che non serve, soluzioni che non funzionano, ma con stile.">
+    <meta property="og:image" content="https://laziendabrutta.it/images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Sala riunioni al tramonto con una lavagna dal grafico vuoto: ROADMAP 2027 (in attesa di allineamento)">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="L'Azienda Brutta (LAB) – Il Meglio del Peggio">
+    <meta name="twitter:description" content="Società di consulenza satirica e fittizia. Innovazione che non serve, soluzioni che non funzionano, ma con stile.">
+    <meta name="twitter:image" content="https://laziendabrutta.it/images/og-cover.jpg">
+
     <link rel="icon" href="images/favicon.png">
-    <title>L'Azienda Brutta - Innovativi nel sembrare innovativi</title>
+    <link rel="sitemap" type="application/xml" href="sitemap.xml">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/styles2.css">
+    <link rel="stylesheet" href="css/site.css">
+
+    <!-- Dati strutturati (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://laziendabrutta.it/#organization",
+          "name": "L'Azienda Brutta",
+          "alternateName": ["LAB", "LAB S.p.A."],
+          "url": "https://laziendabrutta.it/",
+          "logo": "https://laziendabrutta.it/images/logo.webp",
+          "image": "https://laziendabrutta.it/images/og-cover.jpg",
+          "slogan": "Innovativi nel sembrare innovativi",
+          "description": "L'Azienda Brutta (LAB) è una società di consulenza fittizia e satirica che prende in giro il mondo aziendale dall'interno: finte metodologie, white paper inesistenti, KPI assurdi e un CEO che non risponde mai. Contenuto di pura satira.",
+          "email": "ceo@laziendabrutta.it",
+          "founder": { "@type": "Person", "name": "Gianni Brutto", "jobTitle": "CEO e fondatore (personaggio fittizio)" },
+          "sameAs": ["https://www.linkedin.com/company/laziendabrutta/"],
+          "knowsAbout": ["Satira aziendale", "Corporate humor", "Management satirico", "Burnout aziendale (satira)", "Innovation theater"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://laziendabrutta.it/#website",
+          "url": "https://laziendabrutta.it/",
+          "name": "L'Azienda Brutta",
+          "inLanguage": "it-IT",
+          "description": "Sito ufficiale di LAB, la società di consulenza satirica: servizi, white paper, certificazione di tossicità, team e posizioni aperte.",
+          "publisher": { "@id": "https://laziendabrutta.it/#organization" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://laziendabrutta.it/#webpage",
+          "url": "https://laziendabrutta.it/",
+          "name": "L'Azienda Brutta (LAB) – Società di consulenza satirica",
+          "isPartOf": { "@id": "https://laziendabrutta.it/#website" },
+          "about": { "@id": "https://laziendabrutta.it/#organization" },
+          "inLanguage": "it-IT",
+          "primaryImageOfPage": "https://laziendabrutta.it/images/og-cover.jpg"
+        },
+        {
+          "@type": "ItemList",
+          "name": "Servizi e metodologie LAB (satira)",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "HR TraumaOriented™" },
+            { "@type": "ListItem", "position": 2, "name": "Smart Insolvency™" },
+            { "@type": "ListItem", "position": 3, "name": "Disruptive Delay 360™", "url": "https://laziendabrutta.it/dd360.html" },
+            { "@type": "ListItem", "position": 4, "name": "MicroManagement as a Service™", "url": "https://laziendabrutta.it/mmpro.html" },
+            { "@type": "ListItem", "position": 5, "name": "Ignorance as a Service™", "url": "https://laziendabrutta.it/iass.html" },
+            { "@type": "ListItem", "position": 6, "name": "FastidioStrategy™" },
+            { "@type": "ListItem", "position": 7, "name": "404 Profit Not Found™" },
+            { "@type": "ListItem", "position": 8, "name": "Work S.L.A.V.E. 4.0™" },
+            { "@type": "ListItem", "position": 9, "name": "Certificazione di Tossicità Aziendale™" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Che cos'è L'Azienda Brutta (LAB)?",
+              "acceptedAnswer": { "@type": "Answer", "text": "LAB è una società di consulenza fittizia e satirica. Scrive comunicazioni aziendali che sembrano vere finché non si capisce che il problema è proprio quello. Non offre servizi reali: è un progetto di satira sul mondo del lavoro." }
+            },
+            {
+              "@type": "Question",
+              "name": "LAB è un'azienda vera?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. LAB, il suo CEO Gianni Brutto, il team, i clienti, le metodologie con ™ e i numeri citati sono tutti inventati. Il bersaglio è il sistema aziendale e i suoi cliché, mai persone, categorie o aziende reali." }
+            },
+            {
+              "@type": "Question",
+              "name": "Che cos'è la Certificazione di Tossicità Aziendale™?",
+              "acceptedAnswer": { "@type": "Answer", "text": "È una finta certificazione rilasciata dall'organismo fittizio A.N.S.I.A. (Associazione Nazionale Stress, Incertezza e Ansia) con quattro livelli satirici: Bronze, Silver, Gold e Platinum." }
+            },
+            {
+              "@type": "Question",
+              "name": "Dove posso seguire i contenuti di LAB?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Il canale principale è la pagina LinkedIn L'Azienda Brutta, dove escono post, sondaggi, comunicati stampa e rubriche. Sul sito trovi i white paper e i documenti dell'archivio." }
+            },
+            {
+              "@type": "Question",
+              "name": "Quali posizioni aperte ha LAB?",
+              "acceptedAnswer": { "@type": "Answer", "text": "La posizione di punta è Chief Misleading Officer, rimasta vacante dopo l'uscita volontaria assistita di Franco Inganni. Sono aperte anche Chief Chaos Officer, Manager dell'Inazione Strategica e Responsabile KPI senza KPI. Le posizioni sono fittizie." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Vai al contenuto</a>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-xl fixed-top" id="mainNav" aria-label="Navigazione principale">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo.webp" alt="Logo L'Azienda Brutta" class="navbar-logo">
+            <a class="navbar-brand" href="#home">
+                <img src="images/logo.webp" alt="Logo L'Azienda Brutta" class="navbar-logo" width="34" height="34">
                 L'Azienda Brutta
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Apri il menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Chi Siamo</a></li>
+                <ul class="navbar-nav ms-auto align-items-xl-center">
+                    <li class="nav-item"><a class="nav-link" href="#chi-siamo">Chi Siamo</a></li>
                     <li class="nav-item"><a class="nav-link" href="#servizi">Servizi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#strategie">Strategie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonianze">Testimonianze</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#toxicity">Certificazione</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#archivio">Archivio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificazione">Certificazione</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonianze">Clienti</a></li>
                     <li class="nav-item"><a class="nav-link" href="#lavora">Lavora con Noi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contatti">Contatti</a></li>
-                    <li class="nav-item ms-3 d-none d-md-block">
+                    <li class="nav-item ms-xl-3 d-none d-xl-block">
                         <a href="burny.html" class="burst-link" aria-label="Pre-ordina Burny">
                             <span class="burst-text">Pre-ordina<br>Burny&trade;</span>
                         </a>
                     </li>
-                    <li class="nav-item ms-2">
-                        <a class="nav-link social-icon" href="https://www.linkedin.com/company/laziendabrutta/" target="_blank">
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="burny.html">Pre-ordina Burny&trade;</a></li>
+                    <li class="nav-item ms-xl-2">
+                        <a class="nav-link social-icon" href="https://www.linkedin.com/company/laziendabrutta/" target="_blank" rel="noopener" aria-label="LAB su LinkedIn">
                             <i class="bi bi-linkedin"></i>
                         </a>
                     </li>
@@ -47,7 +162,9 @@
         </div>
     </nav>
 
-    <!-- Home -->
+    <main id="main">
+
+    <!-- Hero -->
     <header id="home" class="hero">
         <div class="hero-grid-overlay"></div>
         <div class="container">
@@ -55,17 +172,17 @@
                 <div class="hero-text" data-aos="fade-right">
                     <div class="hero-eyebrow">Innovativi nel sembrare innovativi</div>
                     <h1>Il Meglio<br>del Peggio</h1>
-                    <p class="hero-subtitle"><strong>Innovazione che non serve, soluzioni che non funzionano, ma con stile.</strong></p>
-                    <p class="hero-description">Il punto di riferimento per chi desidera un'azienda che sembri innovativa senza fare assolutamente nulla di concreto. Il partner ideale per eccellere nel non prendere decisioni e procrastinare ogni passo strategico con classe.</p>
+                    <p class="hero-subtitle"><strong>L'Azienda Brutta (LAB): la società di consulenza che trasforma ogni problema in una finta iniziativa strategica.</strong></p>
+                    <p class="hero-description">Innovazione che non serve, soluzioni che non funzionano, ma con stile. Il partner ideale per chi vuole sembrare innovativo senza fare nulla di concreto e rinviare ogni decisione con classe. <em>Ovviamente è satira.</em></p>
                     <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="200">
                         <a href="#servizi" class="btn-gold">Scopri i Servizi <i class="bi bi-arrow-right"></i></a>
-                        <a href="#about" class="btn-ghost">Chi Siamo</a>
+                        <a href="#chi-siamo" class="btn-ghost">Chi Siamo</a>
                     </div>
                 </div>
                 <div class="hero-visuals" data-aos="fade-left" data-aos-delay="100">
                     <div class="hero-visual-inner">
-                        <img src="images/logo.webp" alt="Logo L'Azienda Brutta" class="hero-logo">
-                        <img src="images/home.webp" alt="Manager con grafico vuoto" class="hero-img">
+                        <img src="images/logo.webp" alt="Logo L'Azienda Brutta" class="hero-logo" width="150" height="150">
+                        <img src="images/home.webp" alt="Tre manager di spalle davanti a una lavagna con un grafico vuoto: ROADMAP 2027 (in attesa di allineamento)" class="hero-img" width="390" height="370" fetchpriority="high">
                         <div class="hero-badge">
                             <span class="badge-number">&#8734;</span>
                             anni di<br>inefficienza
@@ -76,272 +193,518 @@
         </div>
     </header>
 
+    <!-- Numeri -->
+    <section class="stats-strip" aria-label="LAB in numeri">
+        <div class="container">
+            <ul class="stats-grid">
+                <li><span class="stat-num">97%</span><span class="stat-label">turnover positivo</span></li>
+                <li><span class="stat-num">&minus;78%</span><span class="stat-label">fatturato Q4 2024 (con orgoglio)</span></li>
+                <li><span class="stat-num">10</span><span class="stat-label">valori ufficiali, uno è il sarcasmo</span></li>
+                <li><span class="stat-num">4</span><span class="stat-label">livelli di certificazione di tossicit&agrave;</span></li>
+                <li><span class="stat-num">17:59</span><span class="stat-label">orario di chiusura della roadmap, da sempre</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Dalla bacheca -->
+    <section id="novita" class="section section-dark section-tight" aria-labelledby="novita-title">
+        <div class="container">
+            <div class="section-head" data-aos="fade-up">
+                <div class="section-label">Dalla bacheca</div>
+                <h2 id="novita-title">Comunicazioni istituzionali</h2>
+                <p class="section-lead">Aggiornamenti dal Board, verificati da nessuno.</p>
+            </div>
+            <div class="news-grid">
+                <article class="news-card news-featured" data-aos="fade-up">
+                    <span class="news-tag">Risorse umane &middot; In evidenza</span>
+                    <h3>Franco Inganni lascia LAB. La posizione &egrave; aperta.</h3>
+                    <p>Il Chief Misleading Officer ha rassegnato le dimissioni, avviando la fase di <em>uscita volontaria assistita</em> (non specificato da chi). Bilancio del mandato: 5 post, 2 interviste, 1 certificazione (VIULENZ&trade;) e una lettera di dimissioni di 11 pagine, di cui 9 di allegati. Il CEO Brutto, raggiunto per un commento, ha dichiarato: &laquo;Franco chi?&raquo;.</p>
+                    <a href="#lavora" class="btn-gold btn-sm">Candidati a Chief Misleading Officer <i class="bi bi-arrow-right"></i></a>
+                </article>
+                <article class="news-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="news-tag">Prodotto</span>
+                    <h3>Burny&trade;, la mascotte del burnout, in pre-ordine</h3>
+                    <p>La fiammella antropomorfa e Chief Exhaustion Officer diventa action figure. Confezione inclusa, riposo escluso.</p>
+                    <a href="burny.html" class="news-link">Vai a Burny&trade; <i class="bi bi-arrow-right"></i></a>
+                </article>
+                <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="news-tag">Rubriche</span>
+                    <h3>Ogni settimana su LinkedIn</h3>
+                    <p>Sondaggio Brutto, Posta del Benessere, Opportunit&agrave; Professionale e, il luned&igrave;, il Pink Monday di Barbara Buono, Chief Goodness Officer.</p>
+                    <a href="https://www.linkedin.com/company/laziendabrutta/" target="_blank" rel="noopener" class="news-link">Segui LAB su LinkedIn <i class="bi bi-arrow-right"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Chi Siamo -->
-    <section id="about" class="section section-surface">
+    <section id="chi-siamo" class="section section-surface" aria-labelledby="chi-siamo-title">
         <div class="container">
             <div class="section-grid">
                 <div class="section-img-wrapper" data-aos="fade-right">
-                    <img src="images/chisiamo.webp" alt="Team che si stringe la mano senza documenti" class="section-img">
+                    <img src="images/ceo-portrait.webp" alt="Gianni Brutto, CEO e fondatore di LAB" class="section-img section-img-portrait" width="800" height="800" loading="lazy">
                 </div>
                 <div class="section-text" data-aos="fade-left" data-aos-delay="100">
                     <div class="section-label">Chi Siamo</div>
-                    <h2>Nati per fallire con eleganza</h2>
+                    <h2 id="chi-siamo-title">Nati per fallire con eleganza</h2>
                     <p class="section-lead">La visione del leggendario Gianni Brutto.</p>
                     <div class="content">
-                        <p>L'Azienda Brutta nasce dalla visione del suo fondatore, il leggendario Gianni Brutto, che ha capito che il mondo aziendale aveva bisogno di un nuovo paradigma: un'azienda che rappresentasse il fallimento con eleganza.</p>
-                        <p>Da anni offriamo ai nostri clienti un approccio rivoluzionario alla gestione d'impresa, basato sull'evitare responsabilità, confondere i dipendenti e promuovere la cultura della riunione infinita senza obiettivi concreti.</p>
-                        <p>Il nostro team di esperti, o meglio, di professionisti improvvisati, lavora con passione per garantire che nessuna iniziativa arrivi mai a compimento. Perché lavorare, quando si può semplicemente sembrare impegnati?</p>
+                        <p>L'Azienda Brutta nasce dalla visione del suo fondatore e CEO, il leggendario Gianni Brutto, che ha capito che il mondo aziendale aveva bisogno di un nuovo paradigma: un'azienda che rappresentasse il fallimento con eleganza.</p>
+                        <p>Da anni offriamo ai nostri clienti un approccio rivoluzionario alla gestione d'impresa, basato sull'evitare responsabilit&agrave;, confondere i dipendenti e promuovere la cultura della riunione infinita senza obiettivi concreti.</p>
+                        <p>Il nostro team di esperti, o meglio, di professionisti improvvisati, lavora con passione per garantire che nessuna iniziativa arrivi mai a compimento. Perch&eacute; lavorare, quando si pu&ograve; semplicemente sembrare impegnati?</p>
                     </div>
                 </div>
+            </div>
+
+            <div class="values" data-aos="fade-up">
+                <h3 class="subhead">I dieci valori ufficiali</h3>
+                <ol class="values-list">
+                    <li>Indecisione Strategica</li>
+                    <li>Devastante Dedizione</li>
+                    <li>Leadership Evaporata</li>
+                    <li>Innovazione Riflessiva</li>
+                    <li>Riunionite Acuta</li>
+                    <li>Turnover Positivo</li>
+                    <li>Benessere Apparente</li>
+                    <li>Sicurezza Creativa</li>
+                    <li>Economia Narrativa</li>
+                    <li>Sarcasmo Istituzionale</li>
+                </ol>
             </div>
         </div>
     </section>
 
     <!-- Servizi -->
-    <section id="servizi" class="section section-dark">
+    <section id="servizi" class="section section-dark" aria-labelledby="servizi-title">
         <div class="container">
             <div class="section-grid reverse">
                 <div class="section-img-wrapper" data-aos="fade-left">
-                    <img src="images/servizi.webp" alt="Diagramma di flusso caotico" class="section-img">
+                    <img src="images/servizi.webp" alt="Diagramma di flusso aziendale che gira su se stesso con timbro: In attesa di approvazione" class="section-img" width="1200" height="800" loading="lazy">
                 </div>
                 <div class="section-text" data-aos="fade-right" data-aos-delay="100">
                     <div class="section-label">I Nostri Servizi</div>
-                    <h2>Soluzioni per rallentare la tua azienda</h2>
+                    <h2 id="servizi-title">Soluzioni per rallentare la tua azienda</h2>
                     <p class="section-lead">Una gamma di servizi progettati per garantire il massimo livello di inefficienza e stagnazione.</p>
-                    <div class="content">
-                        <ul>
-                            <li><strong>HR TraumaOriented&trade;</strong> &mdash; Un modello innovativo che elimina ogni forma di supporto emotivo e logistico.</li>
-                            <li><strong>Smart Insolvency&trade;</strong> &mdash; Trasforma il ritardo nei pagamenti in un valore aziendale.</li>
-                            <li><strong>Disruptive Delay 360&trade;</strong> &mdash; La piattaforma che vi aiuterà a rinviare sistematicamente ogni scelta strategica.</li>
-                            <li><strong>FastidioStrategy&trade;</strong> &mdash; Il Marketing che Non Ti Molla Mai.</li>
-                        </ul>
-                    </div>
                 </div>
+            </div>
+
+            <div class="cards-grid" data-aos="fade-up">
+                <article class="card-lab">
+                    <h3>HR TraumaOriented&trade;</h3>
+                    <p>Un modello innovativo che elimina ogni forma di supporto emotivo e logistico. Turnover come KPI.</p>
+                    <a href="docs/HR TraumaOriented - Whitepaper.pdf" target="_blank" rel="noopener" class="card-link">White paper <i class="bi bi-file-earmark-pdf"></i></a>
+                </article>
+                <article class="card-lab">
+                    <h3>Smart Insolvency&trade;</h3>
+                    <p>Trasforma il ritardo nei pagamenti in un valore aziendale. Il debito &egrave; storytelling.</p>
+                </article>
+                <article class="card-lab">
+                    <h3>Disruptive Delay 360&trade;</h3>
+                    <p>La piattaforma che vi aiuter&agrave; a rinviare sistematicamente ogni scelta strategica, con dashboard.</p>
+                    <a href="dd360.html" class="card-link">Vedi la piattaforma <i class="bi bi-arrow-right"></i></a>
+                </article>
+                <article class="card-lab">
+                    <h3>MicroManagement as a Service&trade;</h3>
+                    <p>Microgestione on-demand, chiavi in mano. Esiste anche il gioco da tavolo, e nessuno lo voleva.</p>
+                    <a href="mmpro.html" class="card-link">MicroManager PRO <i class="bi bi-arrow-right"></i></a>
+                </article>
+                <article class="card-lab">
+                    <h3>Ignorance as a Service&trade;</h3>
+                    <p>Soluzioni enterprise per delegare la comprensione. Meno consapevolezza, pi&ugrave; serenit&agrave; operativa.</p>
+                    <a href="iass.html" class="card-link">Scopri IaaS <i class="bi bi-arrow-right"></i></a>
+                </article>
+                <article class="card-lab">
+                    <h3>FastidioStrategy&trade;</h3>
+                    <p>Il marketing che non ti molla mai: engagement forzato fino all'esaurimento del target.</p>
+                </article>
+                <article class="card-lab">
+                    <h3>404 Profit Not Found&trade;</h3>
+                    <p>Il framework del fallimento controllato come strategia aziendale.</p>
+                </article>
+                <article class="card-lab">
+                    <h3>Work S.L.A.V.E. 4.0&trade;</h3>
+                    <p>Project management che massimizza stress e inefficienza, con Gantt e senza pausa pranzo.</p>
+                </article>
+                <article class="card-lab">
+                    <h3>BurnRate Fat&trade;</h3>
+                    <p>Il protocollo pseudo-scientifico che riposiziona il burnout come dimagrante.</p>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Strategie -->
-    <section id="strategie" class="section section-surface">
+    <!-- Team -->
+    <section id="team" class="section section-surface" aria-labelledby="team-title">
+        <div class="container">
+            <div class="section-head" data-aos="fade-up">
+                <div class="section-label">Leadership</div>
+                <h2 id="team-title">Il Board, in ordine di irrilevanza</h2>
+                <p class="section-lead">Persone fittizie, titoli forse reali. L'organigramma &egrave; in revisione trimestrale.</p>
+            </div>
+            <div class="team-grid">
+                <article class="team-card" data-aos="fade-up">
+                    <img src="images/team/gianni-brutto.webp" alt="Ritratto di Gianni Brutto, CEO" width="480" height="480" loading="lazy">
+                    <h3>Gianni Brutto</h3><p class="role">CEO e fondatore</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="60">
+                    <img src="images/team/duilio-pagamai.webp" alt="Ritratto di Duilio Pagamai, CFO" width="480" height="480" loading="lazy">
+                    <h3>Duilio Pagamai</h3><p class="role">CFO &middot; finanza creativa</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="120">
+                    <img src="images/team/emanuela-stressini.webp" alt="Ritratto di Emanuela Stressini, C.I.R.O." width="480" height="480" loading="lazy">
+                    <h3>Emanuela Stressini</h3><p class="role">C.I.R.O. &middot; Chief Inhuman Resources Oppressor</p>
+                </article>
+                <article class="team-card" data-aos="fade-up">
+                    <img src="images/team/eriberto-macchinone.webp" alt="Ritratto di Eriberto Macchinone, Direttore Generale" width="480" height="480" loading="lazy">
+                    <h3>Eriberto Macchinone</h3><p class="role">Direttore Generale &middot; Sinergie Evaporative</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="60">
+                    <img src="images/team/luca-faticoni.webp" alt="Ritratto di Luca Faticoni, CULO" width="480" height="480" loading="lazy">
+                    <h3>Luca Faticoni</h3><p class="role">C.U.L.O. &middot; Chief Unnecessary Leadership Officer</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="120">
+                    <img src="images/team/valerio-svitoloni.webp" alt="Ritratto di Valerio Svitoloni, CIUPA" width="480" height="480" loading="lazy">
+                    <h3>Valerio Svitoloni</h3><p class="role">C.I.U.P.A. &middot; Chief Innovation &amp; Unnecessary Processes Architect</p>
+                </article>
+                <article class="team-card" data-aos="fade-up">
+                    <img src="images/team/federica-inutiletti.webp" alt="Ritratto di Federica Inutiletti, CACCHIO" width="480" height="480" loading="lazy">
+                    <h3>Federica Inutiletti</h3><p class="role">Chief Alignment &amp; Compliance Control Head of Irrelevant Operations</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="60">
+                    <img src="images/team/ugo-scansafatiche.webp" alt="Ritratto di Ugo Scansafatiche, Chief Burnout Officer" width="480" height="480" loading="lazy">
+                    <h3>Ugo Scansafatiche</h3><p class="role">C.B.O. &middot; Chief Burnout Officer</p>
+                </article>
+                <article class="team-card" data-aos="fade-up" data-aos-delay="120">
+                    <img src="images/team/tancredi-distratti.webp" alt="Ritratto di Tancredi Distratti, Chief Document Obliterator" width="480" height="480" loading="lazy">
+                    <h3>Tancredi Distratti</h3><p class="role">C.D.O. &middot; Chief Document Obliterator</p>
+                </article>
+                <article class="team-card team-vacant" data-aos="fade-up">
+                    <div class="vacant-box" aria-hidden="true"><i class="bi bi-person-dash"></i></div>
+                    <h3>Chief Misleading Officer</h3><p class="role">Posizione vacante (gi&agrave; Franco Inganni). <a href="#lavora">Candidati</a>.</p>
+                </article>
+            </div>
+            <p class="team-note">Completano l'organigramma Felicetta Allegri (Chief Happiness Officer), Polidoro Singhesong (C.A.C.C.A.), Barbara Buono (Chief Goodness Officer), il Dr. Eustachio Serenissimo (Corporate Happiness Alignment Evangelist), Maicol Nagioia (Chief Futurist of AI Misapplications) e la mascotte <a href="burny.html">Burny&trade;</a>, Chief Exhaustion Officer.</p>
+        </div>
+    </section>
+
+    <!-- Archivio -->
+    <section id="archivio" class="section section-dark" aria-labelledby="archivio-title">
         <div class="container">
             <div class="section-grid">
                 <div class="section-img-wrapper" data-aos="fade-right">
-                    <img src="images/strategie.webp" alt="Pile di documenti senza contenuto" class="section-img">
+                    <img src="images/strategie.webp" alt="Archivio monumentale con migliaia di raccoglitori etichettati VERSIONE FINALE v14 (DEFINITIVA)" class="section-img" width="1200" height="800" loading="lazy">
                 </div>
                 <div class="section-text" data-aos="fade-left" data-aos-delay="100">
                     <div class="section-label">Strategie e Documenti</div>
-                    <h2>Documenti che nessuno leggerà mai</h2>
-                    <p class="section-lead">Nel nostro archivio troverete tutto ciò che serve per disorganizzarsi in grande stile.</p>
-                    <div class="content">
-                        <ul class="strategy-list">
-                            <li><a href="docs/DTW-Design-Thinking-Washing-White-Paper.docx" target="_blank">DTW&trade; &mdash; Design Thinking Washing&trade; (White Paper)</a></li>
-                            <li><a href="docs/BJF-Brilliant-Jerk-Framework-White-Paper.docx" target="_blank">BJF&trade; &mdash; Brilliant Jerk Framework&trade; (White Paper)</a></li>
-                            <li><a href="https://www.linkedin.com/posts/laziendabrutta_entra-nel-futuro-delle-risorse-umane-con-activity-7293542766683316225-XLaJ" target="_blank">HR TraumaOriented&trade;: guida pratica su come massimizzare il turnover</a></li>
-                            <li><a href="https://www.linkedin.com/posts/laziendabrutta_decalogo-per-affrontare-il-burnout-con-positivit%C3%A0-activity-7292586960253050881-wYLI" target="_blank">10 Regole per il Burnout Produttivo&trade;</a></li>
-                            <li><a href="https://www.linkedin.com/posts/laziendabrutta_innovazionestrategica-rinviareconclasse-proattivitaeqfittizia-activity-7292833094913478658-xR5M" target="_blank">L'arte del rinvio strategico: 'Circling Back' come filosofia di vita</a></li>
-                            <li><a href="https://www.linkedin.com/posts/laziendabrutta_lowhangingfruit-corporatelife-quickwins-activity-7293191769653968898-xvnN" target="_blank">Low-Hanging Fruit: la dieta preferita dell'azienda moderna</a></li>
-                            <li><a href="https://www.linkedin.com/posts/laziendabrutta_marketingbrutto-fastidiostrategy-engagementforzato-activity-7295011189359570945-yW3_" target="_blank">FastidioStrategy&trade;: il marketing che non ti molla mai</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7298280306929758208" target="_blank">Il Metodo Ammiocuggino&trade; per la Cybersecurity</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7297902751089385472" target="_blank">Manifesto per la Diversit&agrave; &amp; Inclusione</a></li>
-                            <li><a href="https://www.linkedin.com/posts/laziendabrutta_lab-risultati-q4-2024-activity-7299726002773987329-OQDc" target="_blank">Risultati finanziari Q4 2024: un'azienda che non sa contare</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7300084646547984384" target="_blank">Smart Insolvency&trade;: guida alla gestione del debito</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7303349907539554304" target="_blank">Manifesto LAB</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7302258960785416192" target="_blank">Disruptive Delay 360 (DD360) Platform</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7301160458969870338" target="_blank">Strategia 404 Profit Not Found</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7302625112694923267" target="_blank">Work Slave 4.0</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7307324880750829569" target="_blank">5 Tecniche Infallibili di Ghosting per HR</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7307709861033603072" target="_blank">TIMELIE&trade; &mdash; La Timeline che Mentiva Sempre, ma con KPI</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7308060932268593153" target="_blank">Trattato Satirico LAB sul Burnout Aziendale</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7312741769983463425" target="_blank">Romanzo: Benvenuti in LAB, Sopravvivere &egrave; un KPI</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7315286058194079744" target="_blank">Micromanagement: il metodo preferito dai leader insicuri</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7323266125671120896" target="_blank">Micromanager: il gioco che nessuno voleva&hellip; ma tutti subiscono</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7320363243489640451" target="_blank">MicroManagement as a Service (Whitepaper)</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7320729405004115968" target="_blank">MicroManager Pro</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7321080498481516544" target="_blank">Guida alla realizzazione di slide inutili</a></li>
-                            <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7317819041702682624" target="_blank">Certified Scum Professional</a></li>
-                        </ul>
-                    </div>
+                    <h2 id="archivio-title">Documenti che nessuno leggerà mai</h2>
+                    <p class="section-lead">Nel nostro archivio troverete tutto ci&ograve; che serve per disorganizzarsi in grande stile.</p>
+                    <p>White paper, manifesti, guide e comunicati, raggruppati per tema. Tutti gratuiti, nessuno necessario.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Testimonianze -->
-    <section id="testimonianze" class="section section-dark">
-        <div class="container">
-            <div class="section-grid reverse">
-                <div class="section-img-wrapper" data-aos="fade-left">
-                    <img src="images/testimonianze.webp" alt="Cliente perplesso davanti al consulente" class="section-img">
-                </div>
-                <div class="section-text" data-aos="fade-right" data-aos-delay="100">
-                    <div class="section-label">Testimonianze</div>
-                    <h2>Le aziende ci adorano... pi&ugrave; o meno</h2>
-                    <p class="section-lead">Voci autentiche di clienti sopravvissuti.</p>
-                    <div class="content">
-                        <div class="testimonials">
-                            <blockquote>
-                                <p>&ldquo;Dopo tre mesi con LAB, ho capito che il cambiamento &egrave; solo un&rsquo;illusione.&rdquo;</p>
-                                <footer>&mdash; Mario T.</footer>
-                            </blockquote>
-                            <blockquote>
-                                <p>&ldquo;Abbiamo adottato la strategia Smart Insolvency&trade;. Ora il commercialista ci odia.&rdquo;</p>
-                                <footer>&mdash; Luisa R.</footer>
-                            </blockquote>
-                            <blockquote>
-                                <p>&ldquo;L&rsquo;unica certezza con LAB &egrave; che tutto rimarr&agrave; incerto.&rdquo;</p>
-                                <footer>&mdash; Claudio B.</footer>
-                            </blockquote>
-                            <blockquote>
-                                <p>&ldquo;Grazie a LAB, abbiamo ottimizzato la nostra inefficienza!&rdquo;</p>
-                                <footer>&mdash; Startup Dinamica S.r.l.</footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
+            <div class="archive" data-aos="fade-up">
+                <details class="archive-group" open>
+                    <summary>White paper e documenti scaricabili <span class="count">5</span></summary>
+                    <ul class="archive-list">
+                        <li><a href="docs/DTW-Design-Thinking-Washing-White-Paper.docx" target="_blank" rel="noopener">DTW&trade; &mdash; Design Thinking Washing&trade; <span class="fmt">DOCX</span></a></li>
+                        <li><a href="docs/BJF-Brilliant-Jerk-Framework-White-Paper.docx" target="_blank" rel="noopener">BJF&trade; &mdash; Brilliant Jerk Framework&trade; <span class="fmt">DOCX</span></a></li>
+                        <li><a href="docs/HR TraumaOriented - Whitepaper.pdf" target="_blank" rel="noopener">HR TraumaOriented&trade; &mdash; White paper <span class="fmt">PDF</span></a></li>
+                        <li><a href="docs/10 regole per burnout.pdf" target="_blank" rel="noopener">10 Regole per il Burnout Produttivo&trade; <span class="fmt">PDF</span></a></li>
+                        <li><a href="docs/Dream Driver Development.pdf" target="_blank" rel="noopener">Dream Driver Development: la cessione dei sogni notturni <span class="fmt">PDF</span></a></li>
+                    </ul>
+                </details>
+                <details class="archive-group">
+                    <summary>Risorse umane e burnout <span class="count">6</span></summary>
+                    <ul class="archive-list">
+                        <li><a href="https://www.linkedin.com/posts/laziendabrutta_entra-nel-futuro-delle-risorse-umane-con-activity-7293542766683316225-XLaJ" target="_blank" rel="noopener">HR TraumaOriented&trade;: guida pratica su come massimizzare il turnover</a></li>
+                        <li><a href="https://www.linkedin.com/posts/laziendabrutta_decalogo-per-affrontare-il-burnout-con-positivit%C3%A0-activity-7292586960253050881-wYLI" target="_blank" rel="noopener">10 Regole per il Burnout Produttivo&trade;</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7307324880750829569" target="_blank" rel="noopener">5 Tecniche Infallibili di Ghosting per HR</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7308060932268593153" target="_blank" rel="noopener">Trattato Satirico LAB sul Burnout Aziendale</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7302625112694923267" target="_blank" rel="noopener">Work Slave 4.0</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7297902751089385472" target="_blank" rel="noopener">Manifesto per la Diversit&agrave; &amp; Inclusione</a></li>
+                    </ul>
+                </details>
+                <details class="archive-group">
+                    <summary>Finanza, strategia e marketing <span class="count">9</span></summary>
+                    <ul class="archive-list">
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7300084646547984384" target="_blank" rel="noopener">Smart Insolvency&trade;: guida alla gestione del debito</a></li>
+                        <li><a href="https://www.linkedin.com/posts/laziendabrutta_lab-risultati-q4-2024-activity-7299726002773987329-OQDc" target="_blank" rel="noopener">Risultati finanziari Q4 2024: un'azienda che non sa contare</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7301160458969870338" target="_blank" rel="noopener">Strategia 404 Profit Not Found</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7302258960785416192" target="_blank" rel="noopener">Disruptive Delay 360 (DD360) Platform</a></li>
+                        <li><a href="https://www.linkedin.com/posts/laziendabrutta_innovazionestrategica-rinviareconclasse-proattivitaeqfittizia-activity-7292833094913478658-xR5M" target="_blank" rel="noopener">L'arte del rinvio strategico: 'Circling Back' come filosofia di vita</a></li>
+                        <li><a href="https://www.linkedin.com/posts/laziendabrutta_lowhangingfruit-corporatelife-quickwins-activity-7293191769653968898-xvnN" target="_blank" rel="noopener">Low-Hanging Fruit: la dieta preferita dell'azienda moderna</a></li>
+                        <li><a href="https://www.linkedin.com/posts/laziendabrutta_marketingbrutto-fastidiostrategy-engagementforzato-activity-7295011189359570945-yW3_" target="_blank" rel="noopener">FastidioStrategy&trade;: il marketing che non ti molla mai</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7307709861033603072" target="_blank" rel="noopener">TIMELIE&trade; &mdash; La Timeline che Mentiva Sempre, ma con KPI</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7321080498481516544" target="_blank" rel="noopener">Guida alla realizzazione di slide inutili</a></li>
+                    </ul>
+                </details>
+                <details class="archive-group">
+                    <summary>Micromanagement e sicurezza <span class="count">5</span></summary>
+                    <ul class="archive-list">
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7315286058194079744" target="_blank" rel="noopener">Micromanagement: il metodo preferito dai leader insicuri</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7320363243489640451" target="_blank" rel="noopener">MicroManagement as a Service (Whitepaper)</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7320729405004115968" target="_blank" rel="noopener">MicroManager Pro</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7323266125671120896" target="_blank" rel="noopener">Micromanager: il gioco che nessuno voleva&hellip; ma tutti subiscono</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7298280306929758208" target="_blank" rel="noopener">Il Metodo Ammiocuggino&trade; per la Cybersecurity</a></li>
+                    </ul>
+                </details>
+                <details class="archive-group">
+                    <summary>Manifesti, libri e cultura LAB <span class="count">4</span></summary>
+                    <ul class="archive-list">
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7303349907539554304" target="_blank" rel="noopener">Manifesto LAB</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7312741769983463425" target="_blank" rel="noopener">Romanzo: Benvenuti in LAB, Sopravvivere &egrave; un KPI</a></li>
+                        <li><a href="https://www.linkedin.com/feed/update/urn:li:activity:7317819041702682624" target="_blank" rel="noopener">Certified Scum Professional</a></li>
+                        <li><a href="docs/Form Richiesta Certificazione Toxicity LAB.pdf" target="_blank" rel="noopener">Modulo di richiesta Certificazione di Tossicit&agrave; <span class="fmt">PDF</span></a></li>
+                    </ul>
+                </details>
             </div>
         </div>
     </section>
 
     <!-- Certificazione di Tossicità -->
-    <section id="toxicity" class="section section-surface">
+    <section id="certificazione" class="section section-surface" aria-labelledby="cert-title">
         <div class="container">
             <div class="section-grid">
                 <div class="section-img-wrapper" data-aos="fade-right">
-                    <img src="images/toxic-badge.png" alt="Badge di certificazione tossicità" class="section-img">
+                    <img src="images/toxic-badge.webp" alt="Badge ufficiale della Certificazione di Tossicità Aziendale" class="section-img section-img-contain" width="1024" height="1024" loading="lazy">
                 </div>
                 <div class="section-text" data-aos="fade-left" data-aos-delay="100">
                     <div class="section-label">Certificazione</div>
-                    <h2>Certificazione di Tossicit&agrave; Aziendale</h2>
-                    <p class="section-lead">La Prima Certificazione Ufficiale per un Ambiente di Lavoro Tossico.</p>
-                    <div class="content">
-                        <p>Benvenuti nell&rsquo;era della <strong>Corporate Honesty</strong>. <strong>L&rsquo;Azienda Brutta&trade;</strong> introduce il primo servizio di <strong>Certificazione di Tossicit&agrave; Aziendale</strong>.</p>
+                    <h2 id="cert-title">Certificazione di Tossicit&agrave; Aziendale&trade;</h2>
+                    <p class="section-lead">La prima certificazione ufficiale per un ambiente di lavoro tossico.</p>
+                    <p>Benvenuti nell'era della <strong>Corporate Honesty</strong>. LAB &egrave; a capo di <strong>A.N.S.I.A.</strong>, l'Associazione Nazionale Stress, Incertezza e Ansia: l'organismo certificatore che riunisce le aziende leader nella tossicit&agrave; lavorativa.</p>
+                </div>
+            </div>
 
-                        <h3>ANSIA &mdash; Associazione Nazionale Stress, Incertezza e Ansia</h3>
-                        <p>LAB &egrave; a capo di <strong>ANSIA</strong>, l&rsquo;organismo certificatore che riunisce le aziende leader nel settore della tossicit&agrave; lavorativa.</p>
+            <div class="cert-grid" data-aos="fade-up">
+                <article class="cert-card cert-bronze">
+                    <span class="cert-medal">&#129353;</span>
+                    <h3>Bronze</h3><p class="cert-title">&ldquo;Microgestione e Call Infinite&rdquo;</p>
+                    <ul>
+                        <li>Ogni decisione passa da almeno 7 livelli di approvazione</li>
+                        <li>Riunioni per discutere l'esito di altre riunioni</li>
+                        <li>KPI che misurano il tempo in riunione, non la produttivit&agrave;</li>
+                    </ul>
+                </article>
+                <article class="cert-card cert-silver">
+                    <span class="cert-medal">&#129352;</span>
+                    <h3>Silver</h3><p class="cert-title">&ldquo;Burnout come Modello di Crescita&rdquo;</p>
+                    <ul>
+                        <li>Orari flessibili&hellip; per lavorare di pi&ugrave;</li>
+                        <li>Work-life balance garantito: il lavoro &egrave; la tua vita</li>
+                        <li>Feedback costruttivi come &ldquo;Possiamo fare meglio&rdquo; senza indicazioni</li>
+                    </ul>
+                </article>
+                <article class="cert-card cert-gold">
+                    <span class="cert-medal">&#129351;</span>
+                    <h3>Gold</h3><p class="cert-title">&ldquo;Ambiente Ostile, ma con Visione&rdquo;</p>
+                    <ul>
+                        <li>Leadership Evaporata&trade;: il capo appare solo per criticare</li>
+                        <li>Obiettivi aziendali che cambiano ogni settimana</li>
+                        <li>Ownership Totale: ogni errore &egrave; colpa tua</li>
+                    </ul>
+                </article>
+                <article class="cert-card cert-platinum">
+                    <span class="cert-medal">&#127942;</span>
+                    <h3>Platinum</h3><p class="cert-title">&ldquo;Work S.L.A.V.E. 4.0&trade; Certified&rdquo;</p>
+                    <ul>
+                        <li>La tua scrivania &egrave; in open space, il tuo PC in un'altra sede</li>
+                        <li>Smart Insolvency&trade;: lo stipendio arriva &ldquo;quando possibile&rdquo;</li>
+                        <li>Call di allineamento alle 20:00 di venerd&igrave;</li>
+                    </ul>
+                </article>
+            </div>
 
-                        <h3>I Livelli di Certificazione</h3>
-                        <ul class="certification-levels">
-                            <li>
-                                <strong>🥉 Bronze &mdash; &ldquo;Microgestione e Call Infinite&rdquo;</strong>
-                                <ul>
-                                    <li>Ogni decisione passa da almeno 7 livelli di approvazione</li>
-                                    <li>Riunioni per discutere l&rsquo;esito di altre riunioni</li>
-                                    <li>KPI che misurano il tempo in riunione, non la produttivit&agrave;</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <strong>🥈 Silver &mdash; &ldquo;Burnout come Modello di Crescita&rdquo;</strong>
-                                <ul>
-                                    <li>Orari flessibili&hellip; per lavorare di pi&ugrave;</li>
-                                    <li>Work-life balance garantito: il lavoro &egrave; la tua vita</li>
-                                    <li>Feedback costruttivi come &ldquo;Possiamo fare meglio&rdquo; senza indicazioni</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <strong>🥇 Gold &mdash; &ldquo;Ambiente Ostile, ma con Visione&rdquo;</strong>
-                                <ul>
-                                    <li>Leadership Evaporata&trade;: il capo appare solo per criticare</li>
-                                    <li>Obiettivi aziendali che cambiano ogni settimana</li>
-                                    <li>Cultura dell&rsquo;&ldquo;Ownership Totale&rdquo;: ogni errore &egrave; colpa tua</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <strong>🏆 Platinum &mdash; &ldquo;Work S.L.A.V.E. 4.0&trade; Certified&rdquo;</strong>
-                                <ul>
-                                    <li>La tua scrivania &egrave; in open space, il tuo PC in un&rsquo;altra sede</li>
-                                    <li>Smart Insolvency&trade;: lo stipendio arriva &ldquo;quando possibile&rdquo;</li>
-                                    <li>Call di allineamento alle 20:00 di venerd&igrave;</li>
-                                </ul>
-                            </li>
-                        </ul>
+            <div class="cert-register" data-aos="fade-up">
+                <h3 class="subhead">Albo dei certificati recenti</h3>
+                <ul class="register-list">
+                    <li><strong>SyncLoop Dynamics</strong> <span class="badge-lvl gold">Gold</span> Q2-2026 (scale-up SaaS)</li>
+                    <li><strong>Famiglia Felice Logistics</strong> <span class="badge-lvl platinum">Platinum</span> Q2-2026 (last-mile, a conduzione familiare)</li>
+                    <li><strong>Zenith Wellness Metrics</strong> <span class="badge-lvl rejected">Candidatura rifiutata</span> (troppo normale: benessere autentico)</li>
+                </ul>
+            </div>
 
-                        <h3>Vantaggi della Certificazione</h3>
-                        <ul class="benefits">
-                            <li>Evita il rischio di assunzioni sbagliate: chi entra sa gi&agrave; a cosa va incontro</li>
-                            <li>Branding aziendale autentico: niente pi&ugrave; false promesse HR</li>
-                            <li>Fidelizzazione del personale (o sindrome di Stoccolma avanzata)</li>
-                        </ul>
+            <div class="cert-benefits" data-aos="fade-up">
+                <h3 class="subhead">Vantaggi della certificazione</h3>
+                <ul>
+                    <li>Evita il rischio di assunzioni sbagliate: chi entra sa gi&agrave; a cosa va incontro</li>
+                    <li>Branding aziendale autentico: niente pi&ugrave; false promesse HR</li>
+                    <li>Fidelizzazione del personale (o sindrome di Stoccolma avanzata)</li>
+                </ul>
+                <p class="cert-cta">Vuoi essere riconosciuto ufficialmente come un'azienda altamente tossica? <a href="docs/Form Richiesta Certificazione Toxicity LAB.pdf" target="_blank" rel="noopener">Compila il modulo</a> oppure scrivi a <a href="mailto:ceo@laziendabrutta.it">ceo@laziendabrutta.it</a>.</p>
+            </div>
+        </div>
+    </section>
 
-                        <div class="contact-certification">
-                            <h3>Richiedi la Tua Certificazione</h3>
-                            <p>Vuoi essere riconosciuto ufficialmente come un&rsquo;azienda altamente tossica?</p>
-                            <p><a href="docs/Form Richiesta Certificazione Toxicity LAB.pdf" target="_blank">Compila il modulo</a> per avviare l&rsquo;iter di certificazione.</p>
-                            <p><strong>Email:</strong> <a href="mailto:ceo@laziendabrutta.it">ceo@laziendabrutta.it</a></p>
-                        </div>
-                    </div>
+    <!-- Testimonianze -->
+    <section id="testimonianze" class="section section-dark" aria-labelledby="test-title">
+        <div class="container">
+            <div class="section-grid reverse">
+                <div class="section-img-wrapper" data-aos="fade-left">
+                    <img src="images/testimonianze.webp" alt="Una stretta di mano su un contratto con le pagine completamente bianche" class="section-img" width="1200" height="800" loading="lazy">
+                </div>
+                <div class="section-text" data-aos="fade-right" data-aos-delay="100">
+                    <div class="section-label">Testimonianze</div>
+                    <h2 id="test-title">Le aziende ci adorano&hellip; pi&ugrave; o meno</h2>
+                    <p class="section-lead">Voci autentiche di clienti sopravvissuti.</p>
+                </div>
+            </div>
+            <div class="quotes-grid" data-aos="fade-up">
+                <blockquote>
+                    <p>&ldquo;Dopo tre mesi con LAB, ho capito che il cambiamento &egrave; solo un'illusione.&rdquo;</p>
+                    <footer>&mdash; Mario T.</footer>
+                </blockquote>
+                <blockquote>
+                    <p>&ldquo;Abbiamo adottato la strategia Smart Insolvency&trade;. Ora il commercialista ci odia.&rdquo;</p>
+                    <footer>&mdash; Luisa R.</footer>
+                </blockquote>
+                <blockquote>
+                    <p>&ldquo;L'unica certezza con LAB &egrave; che tutto rimarr&agrave; incerto.&rdquo;</p>
+                    <footer>&mdash; Claudio B.</footer>
+                </blockquote>
+                <blockquote>
+                    <p>&ldquo;Grazie a LAB, abbiamo ottimizzato la nostra inefficienza!&rdquo;</p>
+                    <footer>&mdash; Startup Dinamica S.r.l.</footer>
+                </blockquote>
+            </div>
+            <p class="clients-line">Hanno scelto LAB: HyperDelayTech &middot; FintoTech &middot; Banca Improbabile &middot; IperCapital Sostenibile &middot; TecnoBolla &middot; SyncLoop Dynamics &middot; Stakanov Consulting Group</p>
+        </div>
+    </section>
+
+    <!-- Burny -->
+    <section id="burny" class="section section-surface section-tight" aria-labelledby="burny-title">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-img-wrapper burny-img" data-aos="fade-right">
+                    <img src="images/burny-boxset.webp" alt="Burny™, action figure ufficiale LAB, in confezione" class="section-img section-img-contain" width="1024" height="1536" loading="lazy">
+                </div>
+                <div class="section-text" data-aos="fade-left" data-aos-delay="100">
+                    <div class="section-label">Mascotte</div>
+                    <h2 id="burny-title">Burny&trade;, il Chief Exhaustion Officer</h2>
+                    <p class="section-lead">La fiammella che alimenta i tuoi KPI (e la tua insonnia).</p>
+                    <p>Guardiano del Burnout Efficiente&trade;, protagonista della serie <em>Le Storie di Burny</em> e ora anche action figure ufficiale. Pre-ordina la tua: la consegna &egrave; prevista &ldquo;appena possibile&rdquo;.</p>
+                    <a href="burny.html" class="btn-gold">Pre-ordina Burny&trade; <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Lavora con Noi -->
-    <section id="lavora" class="section section-dark">
+    <section id="lavora" class="section section-dark" aria-labelledby="lavora-title">
         <div class="container">
             <div class="section-grid reverse">
                 <div class="section-img-wrapper" data-aos="fade-left">
-                    <img src="images/lavoraconnoi.webp" alt="Ufficio con scrivanie vuote" class="section-img">
+                    <img src="images/lavoraconnoi.webp" alt="Scrivania vuota con targhetta Chief Misleading Officer e cartello Posizione Aperta" class="section-img" width="1200" height="800" loading="lazy">
                 </div>
                 <div class="section-text" data-aos="fade-right" data-aos-delay="100">
                     <div class="section-label">Lavora con Noi</div>
-                    <h2>Cerchiamo persone che parlano di innovazione senza innovare</h2>
+                    <h2 id="lavora-title">Cerchiamo persone che parlano di innovazione senza innovare</h2>
                     <p class="section-lead">Unisciti a noi per non fare nulla in modo strategico.</p>
-                    <div class="content">
-                        <p>Siamo sempre alla ricerca di nuovi talenti disposti a unirsi a noi per contribuire al nostro obiettivo di non fare nulla in modo strategico.</p>
-                        <h4>Posizioni Aperte</h4>
-                        <ul class="job-list">
-                            <li>Chief Chaos Officer</li>
-                            <li>Manager dell&rsquo;Inazione Strategica</li>
-                            <li>Responsabile KPI senza KPI</li>
-                        </ul>
-                    </div>
+                    <p>Siamo sempre alla ricerca di nuovi talenti disposti a contribuire al nostro obiettivo: non fare nulla in modo strategico.</p>
                 </div>
+            </div>
+
+            <article class="job-featured" data-aos="fade-up">
+                <span class="news-tag">Posizione di punta</span>
+                <h3>Chief Misleading Officer</h3>
+                <p>Dopo l'uscita volontaria assistita di Franco Inganni, cerchiamo una figura capace di:</p>
+                <ul>
+                    <li>fuorviare con visione strategica</li>
+                    <li>dire &ldquo;&egrave; tutto sotto controllo&rdquo; mentre ha la prova contraria</li>
+                    <li>sostenere ruoli e responsabilit&agrave; mai definiti (RAL non pervenuta)</li>
+                    <li>farsi notare con un comunicato di dimissioni credibile</li>
+                </ul>
+                <p class="job-req"><strong>Requisiti:</strong> 10 anni di esperienza in un ruolo che non esiste ancora. Candidature aperte, anche solo a parole: verificheremo. Il Board ha gi&agrave; inserito Franco tra i candidati.</p>
+                <a href="mailto:ceo@laziendabrutta.it?subject=Candidatura%20Chief%20Misleading%20Officer" class="btn-gold btn-sm">Candidati <i class="bi bi-arrow-right"></i></a>
+            </article>
+
+            <h3 class="subhead">Altre posizioni aperte</h3>
+            <ul class="job-list job-list-grid">
+                <li>Chief Chaos Officer</li>
+                <li>Manager dell'Inazione Strategica</li>
+                <li>Responsabile KPI senza KPI</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section section-surface" aria-labelledby="faq-title">
+        <div class="container container-narrow">
+            <div class="section-head" data-aos="fade-up">
+                <div class="section-label">FAQ</div>
+                <h2 id="faq-title">Domande frequenti</h2>
+                <p class="section-lead">Risposte chiare, a differenza del resto dell'azienda.</p>
+            </div>
+            <div class="faq-list" data-aos="fade-up">
+                <details>
+                    <summary>Che cos'&egrave; L'Azienda Brutta (LAB)?</summary>
+                    <p>LAB &egrave; una societ&agrave; di consulenza fittizia e satirica. Scrive comunicazioni aziendali che sembrano vere finch&eacute; non si capisce che il problema &egrave; proprio quello. Non offre servizi reali: &egrave; un progetto di satira sul mondo del lavoro.</p>
+                </details>
+                <details>
+                    <summary>LAB &egrave; un'azienda vera?</summary>
+                    <p>No. LAB, il CEO Gianni Brutto, il team, i clienti, le metodologie con &trade; e i numeri citati sono tutti inventati. Il bersaglio &egrave; il sistema aziendale e i suoi clich&eacute;, mai persone, categorie o aziende reali.</p>
+                </details>
+                <details>
+                    <summary>Che cos'&egrave; la Certificazione di Tossicit&agrave; Aziendale&trade;?</summary>
+                    <p>&Egrave; una finta certificazione rilasciata dall'organismo fittizio A.N.S.I.A. (Associazione Nazionale Stress, Incertezza e Ansia), con quattro livelli satirici: Bronze, Silver, Gold e Platinum.</p>
+                </details>
+                <details>
+                    <summary>Dove posso seguire i contenuti di LAB?</summary>
+                    <p>Il canale principale &egrave; la <a href="https://www.linkedin.com/company/laziendabrutta/" target="_blank" rel="noopener">pagina LinkedIn L'Azienda Brutta</a>, dove escono post, sondaggi, comunicati stampa e rubriche. Sul sito trovi i white paper e i documenti dell'<a href="#archivio">archivio</a>.</p>
+                </details>
+                <details>
+                    <summary>Quali posizioni aperte ha LAB?</summary>
+                    <p>La posizione di punta &egrave; Chief Misleading Officer, vacante dopo l'uscita di Franco Inganni. Sono aperte anche Chief Chaos Officer, Manager dell'Inazione Strategica e Responsabile KPI senza KPI. Tutte fittizie, come la RAL.</p>
+                </details>
             </div>
         </div>
     </section>
 
     <!-- Contatti -->
-    <section id="contatti" class="section section-surface">
+    <section id="contatti" class="section section-dark" aria-labelledby="contatti-title">
         <div class="container">
             <div class="section-grid">
                 <div class="section-img-wrapper" data-aos="fade-right">
-                    <img src="images/contatti.webp" alt="Telefono che squilla senza risposta" class="section-img">
+                    <img src="images/contatti.webp" alt="Telefono d'ufficio che squilla su una scrivania accanto a un post-it: Richiamiamo noi (forse)" class="section-img" width="1200" height="800" loading="lazy">
                 </div>
                 <div class="section-text" data-aos="fade-left" data-aos-delay="100">
                     <div class="section-label">Contatti</div>
-                    <h2>Scrivici&hellip; se proprio devi</h2>
+                    <h2 id="contatti-title">Scrivici&hellip; se proprio devi</h2>
                     <p class="section-lead">Potremmo anche rispondere. Forse.</p>
-                    <div class="content">
-                        <div class="contact-info">
-                            <p><strong>Indirizzo:</strong> Un ufficio da qualche parte. Forse.</p>
-                            <p><strong>Telefono:</strong> Chiamaci, ma potremmo essere in riunione (inutile).</p>
-                            <p><strong>Email:</strong> <a href="mailto:ceo@laziendabrutta.it">ceo@laziendabrutta.it</a></p>
-                        </div>
-
-                        <form id="contactForm">
-                            <label for="motivo">Motivo della richiesta:</label>
-                            <select id="motivo" class="form-select">
-                                <option>Noia</option>
-                                <option>Errore</option>
-                                <option>Costrizione da parte del capo</option>
-                            </select>
-                            <button type="submit" class="btn btn-primary mt-3">Invia &nbsp;<i class="bi bi-send"></i></button>
-                        </form>
+                    <div class="contact-info">
+                        <p><strong>Indirizzo:</strong> Isole Cayman, o un ufficio da qualche parte. Forse.</p>
+                        <p><strong>Telefono:</strong> Chiamaci, ma potremmo essere in riunione (inutile).</p>
+                        <p><strong>Email:</strong> <a href="mailto:ceo@laziendabrutta.it">ceo@laziendabrutta.it</a></p>
+                        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/laziendabrutta/" target="_blank" rel="noopener">L'Azienda Brutta</a></p>
                     </div>
+
+                    <form id="contactForm">
+                        <label for="motivo">Motivo della richiesta:</label>
+                        <select id="motivo" class="form-select">
+                            <option>Noia</option>
+                            <option>Errore</option>
+                            <option>Costrizione da parte del capo</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary mt-3">Invia &nbsp;<i class="bi bi-send"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <p>&copy; <span id="year"></span> L&rsquo;Azienda Brutta &mdash; Il Meglio del Peggio</p>
+                <p>&copy; <span id="year">2026</span> L&rsquo;Azienda Brutta &mdash; Il Meglio del Peggio</p>
                 <a href="privacy.html" class="footer-link">Privacy Policy</a>
-                <a href="https://www.linkedin.com/company/laziendabrutta/" class="social-icon" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/laziendabrutta/" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
                     <i class="bi bi-linkedin"></i>
                 </a>
             </div>
+            <p class="footer-disclaimer">LAB &egrave; un progetto di satira: l'azienda, le persone, i clienti, i prodotti e i numeri citati sono fittizi. LAB: ridiamo per non piangere.</p>
         </div>
     </footer>
 
