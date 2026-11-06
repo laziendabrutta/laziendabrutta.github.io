@@ -184,3 +184,5 @@
 @media (max-width: 768px) { .hero-img { height: 220px; } }
 .team-card img { height: auto; }
 img { max-width: 100%; }
+.job-list-grid li::before { content: none !important; }
+.job-list-grid li { padding-left: 1rem !important; }
