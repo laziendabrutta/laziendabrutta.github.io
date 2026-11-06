@@ -178,3 +178,9 @@
   .section-tight { padding: 60px 0; }
   .burny-img .section-img { height: 340px; }
 }
+.section-img-portrait{object-position:center top}
+.values-list { list-style: none; }
+.hero-img { max-width: 470px; height: 330px; object-position: 70% center; }
+@media (max-width: 768px) { .hero-img { height: 220px; } }
+.team-card img { height: auto; }
+img { max-width: 100%; }
